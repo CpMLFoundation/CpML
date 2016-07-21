@@ -15,3 +15,5 @@ The CpML standard is industry owned and governed, but open for participation and
 on Energy Trading, CpML is commercially-neutral and does not favor any particular technology or service. 
 
 This repository contains the current release version as well as in-progress revisions open for comment and at-risk consumption.
+
+See http://www.cpml.org
