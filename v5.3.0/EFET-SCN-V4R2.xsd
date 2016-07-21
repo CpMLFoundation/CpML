@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd"
+    elementFormDefault="qualified">
+
+    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd" schemaLocation="EFET-CoreCmpts-V4R2.xsd" />
+    <xsd:include schemaLocation="EFET-ConfirmationDescription-V4R2.xsd" />
+
+    <xsd:element name="StrategyConfirmation">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:group ref="DocumentHeader" />
+                <xsd:element name="DocumentVersion" type="ecc:VersionType" />
+                <xsd:element name="InstrumentBasket">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="StrategyID" type="ecc:IdentificationType" />
+                            <xsd:element name="StrategyType" type="ecc:StrategyTypeType" />
+                            <xsd:element name="TransactionDescription" minOccurs="2" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="TradeID" type="ecc:IdentificationType" />
+                                        <xsd:group ref="ConfirmationDescription" />
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:attributeGroup ref="ecc:SchemaDescription" />
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

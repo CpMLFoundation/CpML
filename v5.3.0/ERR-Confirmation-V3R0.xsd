@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+## eRR 3.0
+## $Revision: 120823 $
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd"
+    xmlns:err="http://www.efet.org/schemas/eRR/V3R0" elementFormDefault="qualified">
+
+    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd" schemaLocation="EFET-CoreCmpts-V4R2.xsd" />
+    <xsd:import namespace="http://www.efet.org/schemas/eRR/V3R0" schemaLocation="ERR-CoreCmpts-V3R0.xsd" />
+    <xsd:include schemaLocation="EFET-ConfirmationDescription-V4R2.xsd" />
+
+    <xsd:element name="RegulatoryConfirmation">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:group ref="DocumentHeader" />
+                <xsd:element name="ReportingTimestamp" type="ecc:UTCTimestampType" minOccurs="0" />
+                <xsd:element name="ReferencedDocumentID" type="ecc:IdentificationType" />
+                <xsd:element name="ReferencedDocumentVersion" type="ecc:VersionType" />
+                <xsd:element name="ConfirmationTimestamp" type="ecc:UTCTimestampType" />
+                <xsd:element name="ConfirmationMeans" type="err:ConfirmationMeansType" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
