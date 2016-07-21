@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd"
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts.xsd"
     elementFormDefault="qualified">
 
-    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd" schemaLocation="EFET-CoreCmpts-V4R2.xsd" />
+    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts.xsd" schemaLocation="EFET-CoreCmpts.xsd" />
     <xsd:include schemaLocation="EFET-CoreElements-V4R2.xsd" />
 
     <xsd:element name="BrokerConfirmation">
