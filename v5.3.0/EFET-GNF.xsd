@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd"
+    elementFormDefault="qualified">
+    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd" schemaLocation="EFET-CoreCmpts-V4R2.xsd" />
+    <xsd:include schemaLocation="EFET-CoreElements-V4R2.xsd" />
+
+    <xsd:element name="GenericConfirmation">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:group ref="DocumentHeader" />
+                <xsd:element name="DocumentVersion" type="ecc:VersionType" />
+                <xsd:element name="TransactionType" type="ecc:TransactionType" />
+                <xsd:element name="Commodity" type="ecc:IndexCommodityType" minOccurs="0" />
+                <xsd:element name="ProductName" type="ecc:ProductNameType" />
+                <xsd:element name="BuyerParty" type="ecc:PartyType" />
+                <xsd:element name="SellerParty" type="ecc:PartyType" />
+                <xsd:element name="Currency" type="ecc:CurrencyCodeTypeWithFractionOption" />
+                <xsd:element name="TradeDate" type="ecc:DateType" />
+                <xsd:element name="TradeTime" type="ecc:TimeType" minOccurs="0" />
+                <xsd:element name="TraderName" type="ecc:NameType" minOccurs="0" />
+                <xsd:element ref="EffectiveDate" minOccurs="0" />
+                <xsd:element ref="TerminationDate" minOccurs="0" />
+                <xsd:element name="TotalVolume" type="ecc:QuantityType" minOccurs="0" />
+                <xsd:choice minOccurs="0">
+                    <xsd:element name="TotalVolumeUnit" type="ecc:UnitOfMeasureType" />
+                    <xsd:element name="TotalAmountCurrency" type="ecc:CurrencyCodeType" />
+                </xsd:choice>
+                <xsd:element name="OptionDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="StrikePrice" type="ecc:PriceType" />
+                            <xsd:element name="StrikePriceCurrency" type="ecc:CurrencyCodeType" />
+                            <xsd:element name="StrikePricePerUnitOfMeasure" type="ecc:s30" minOccurs="0" />
+                            <xsd:element name="PremiumCurrency" type="ecc:CurrencyCodeType" />
+                            <xsd:element name="TotalPremiumValue" type="ecc:PriceType" />
+                            <xsd:element name="ExerciseDateTime" type="ecc:ClockDateTimeType" />
+                            <xsd:element name="ExerciseTimeZone" type="ecc:TimeZoneOffsetType" minOccurs="0" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="Attachment" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="MimeType" type="ecc:AttachmentMimeType" />
+                            <xsd:element name="Filename" type="ecc:FilenameType" />
+                            <xsd:element name="DocumentDescription" type="ecc:DocumentDescriptionType" />
+                            <xsd:element name="AttachmentData" type="xsd:base64Binary" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:attributeGroup ref="ecc:SchemaDescription" />
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
