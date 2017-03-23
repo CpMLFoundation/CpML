@@ -4,6 +4,8 @@
 
     <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd" schemaLocation="EFET-CoreCmpts-V4R2.xsd" />
 
+    # Add a link to document here
+    
     <xsd:group name="DocumentHeader">
         <xsd:sequence>
             <xsd:element name="DocumentID" type="ecc:IdentificationType" />
