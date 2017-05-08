@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd"
+<!-- 3.0-2017-03-03 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd"
     elementFormDefault="qualified">
-
-    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd" schemaLocation="EFET-CoreCmpts-V4R2.xsd" />
-    <xsd:include schemaLocation="EFET-CoreElements-V4R2.xsd" />
-
+　
+    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd" schemaLocation="EFET-CoreCmpts-V4R3.xsd" />
+    <xsd:include schemaLocation="EFET-CoreElements-V4R3.xsd" />
+　
     <xsd:element name="BrokerConfirmation">
         <xsd:complexType>
             <xsd:sequence>
@@ -24,7 +25,10 @@
                     <xsd:element name="TotalVolumeUnit" type="ecc:UnitOfMeasureType" />
                     <xsd:element name="TotalAmountCurrency" type="ecc:CurrencyCodeType" />
                 </xsd:choice>
-                <xsd:element name="TradeDate" type="ecc:DateType" />
+                <xsd:choice minOccurs="1">
+                    <xsd:element name="TradeDate" type="ecc:DateType" />
+                    <xsd:element name="TradeExecutionTimestamp" type="ecc:UTCOffsetTimestampType" />
+                </xsd:choice>
                 <xsd:element name="CapacityUnit" type="ecc:UnitOfMeasureType" minOccurs="0" />
                 <xsd:element name="PriceUnit" minOccurs="0">
                     <xsd:complexType>
@@ -40,8 +44,7 @@
                             <xsd:element name="TimeIntervalQuantity" maxOccurs="unbounded">
                                 <xsd:complexType>
                                     <xsd:sequence>
-                                        <xsd:element name="DeliveryStartDateAndTime" type="ecc:ClockDateTimeType" />
-                                        <xsd:element name="DeliveryEndDateAndTime" type="ecc:ClockDateTimeType" />
+                                        <xsd:group ref="DeliveryChoice" />
                                         <xsd:element name="ContractCapacity" type="ecc:QuantityType" />
                                         <xsd:element name="Price" type="ecc:PriceType" minOccurs="0" />
                                     </xsd:sequence>
@@ -138,7 +141,7 @@
                                     </xsd:sequence>
                                 </xsd:complexType>
                             </xsd:element>
-
+　
                         </xsd:sequence>
                     </xsd:complexType>
                 </xsd:element>
@@ -284,10 +287,7 @@
                                         <xsd:element name="Exercise" maxOccurs="unbounded">
                                             <xsd:complexType>
                                                 <xsd:sequence>
-                                                    <xsd:element name="DeliveryStartDateTime" type="ecc:ClockDateTimeType"
-                                                        minOccurs="0" />
-                                                    <xsd:element name="DeliveryEndDateTime" type="ecc:ClockDateTimeType"
-                                                        minOccurs="0" />
+                                                    <xsd:group ref="DeliveryChoiceExercise" minOccurs="0"/>
                                                     <xsd:element name="ExerciseDateTime" type="ecc:ClockDateTimeType" minOccurs="1" />
                                                     <xsd:element name="ExerciseTimeZone" type="ecc:TimeZoneOffsetType"
                                                         minOccurs="0" />
