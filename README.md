@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/jazzmanflynn/CpML.png?label=ready&title=Ready)](https://waffle.io/jazzmanflynn/CpML)
 # Commodities Product Markup Language (CpML) #
 
 Commodities Product Markup Language source code repository and documentation wiki.
