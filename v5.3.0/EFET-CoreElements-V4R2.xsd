@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd"
+<!-- 3.0-2017-03-03 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd"
     elementFormDefault="qualified">
-
-    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd" schemaLocation="EFET-CoreCmpts-V4R2.xsd" />
-
-    # Add a link to document here
-    
+　
+    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd" schemaLocation="EFET-CoreCmpts-V4R3.xsd" />
+　
+    <xsd:group name="DeliveryChoice">
+        <xsd:choice>
+            <xsd:sequence>
+                <xsd:element name="DeliveryStartDateAndTime" type="ecc:ClockDateTimeType" />
+                <xsd:element name="DeliveryEndDateAndTime" type="ecc:ClockDateTimeType" />
+            </xsd:sequence>
+            <xsd:sequence>
+                <xsd:element name="DeliveryStartTimestamp" type="ecc:UTCOffsetTimestampType" />
+                <xsd:element name="DeliveryEndTimestamp" type="ecc:UTCOffsetTimestampType" />
+            </xsd:sequence>
+        </xsd:choice>
+    </xsd:group>
+　
+    <xsd:group name="DeliveryChoiceExercise">
+        <xsd:choice>
+            <xsd:sequence>
+                <xsd:element name="DeliveryStartDateTime" type="ecc:ClockDateTimeType" />
+                <xsd:element name="DeliveryEndDateTime" type="ecc:ClockDateTimeType" />
+            </xsd:sequence>
+            <xsd:sequence>
+                <xsd:element name="DeliveryStartTimestamp" type="ecc:UTCOffsetTimestampType" />
+                <xsd:element name="DeliveryEndTimestamp" type="ecc:UTCOffsetTimestampType" />
+            </xsd:sequence>
+        </xsd:choice>
+    </xsd:group>
+　
     <xsd:group name="DocumentHeader">
         <xsd:sequence>
             <xsd:element name="DocumentID" type="ecc:IdentificationType" />
@@ -25,7 +50,7 @@
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
+　
     <!-- CNF / BCN -->
     <xsd:element name="CommonPricing" type="ecc:CommonPricingType" />
     <xsd:element name="EffectiveDate" type="ecc:DateType" />
