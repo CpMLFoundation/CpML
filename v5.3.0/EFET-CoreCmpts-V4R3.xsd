@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd"
-    elementFormDefault="qualified" targetNamespace="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd">
+<!-- 3.0-2017-03-03 -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd"
+    elementFormDefault="qualified" targetNamespace="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd">
     
     <!-- Base Types -->
+    <simpleType name="UTCOffsetTimestampType">
+        <restriction base="dateTime">
+            <pattern value="20..-..-..T..:..:..(Z|[\+-][01][0-9]:(00|15|30|45))" />
+        </restriction>
+    </simpleType>
     <simpleType name="ClockDateTimeType">
         <annotation>
             <documentation>
@@ -110,14 +116,6 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-    <simpleType name="s100">
-        <restriction base="string">
-            <maxLength value="100" />
-            <minLength value="1" />
-            <whiteSpace value="preserve" />
-        </restriction>
-    </simpleType>
-
     <simpleType name="s200">
         <restriction base="string">
             <maxLength value="200" />
@@ -143,16 +141,6 @@
         <restriction base="time">
             <pattern value="..:..:..Z?" />
         </restriction>
-    </simpleType>
-    <simpleType name="DateTimeType">
-        <union>
-            <simpleType>
-                <restriction base="dateTime" />
-            </simpleType>
-            <simpleType>
-                <restriction base="ecc:DateType" />
-            </simpleType>
-        </union>
     </simpleType>
     <simpleType name="TrueFalseType">
         <restriction base="NMTOKEN">
@@ -226,7 +214,7 @@
     <simpleType name="FilenameType">
         <restriction base="ecc:s255" />
     </simpleType>
-
+　
     <simpleType name="BrokerIDType">
         <restriction base="ecc:s5" />
     </simpleType>
@@ -236,7 +224,7 @@
     <simpleType name="BTUQualityAdjustmentType">
         <restriction base="ecc:s255" />
     </simpleType>
-
+　
     <simpleType name="BullionType">
         <restriction base="NMTOKEN">
             <enumeration value="Gold" />
@@ -246,7 +234,7 @@
             <enumeration value="RhodiumSponge" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="CommonPricingType">
         <restriction base="ecc:TrueFalseType" />
     </simpleType>
@@ -301,7 +289,7 @@
             </extension>
         </simpleContent>
     </complexType>
-
+　
     <simpleType name="CycleType">
         <restriction base="ecc:s255" />
     </simpleType>
@@ -311,7 +299,7 @@
     <simpleType name="DeliveryPointAreaType">
         <restriction base="ecc:s255" />
     </simpleType>
-
+　
     <simpleType name="DeliveryDateType">
         <restriction base="NMTOKEN">
             <enumeration value="Spot" />
@@ -344,7 +332,7 @@
             <enumeration value="unitFirm" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="DocumentType">
         <restriction base="NMTOKEN">
             <enumeration value="ACK" />
@@ -372,7 +360,7 @@
             <enumeration value="HISTORICALEXPIRED" />
         </restriction>
     </simpleType>
-
+　
     <complexType name="DoddFrankType">
         <sequence>
             <element name="UniqueSwapIdentifier" type="ecc:USIType" form="unqualified" minOccurs="0" maxOccurs="1" />
@@ -417,7 +405,7 @@
             <pattern value="[A-Z]{2}-[0-9]{3}-[0-9]{3}([0-9]|-0)?" />
         </restriction>
     </simpleType>
-     <complexType name="EUReporting">
+    <complexType name="EUReporting">
         <sequence>
             <element name="UTI" type="ecc:UTIType" form="unqualified" minOccurs="0" maxOccurs="1" />
         </sequence>
@@ -492,7 +480,7 @@
             <enumeration value="Gold" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="NameType">
         <annotation>
             <documentation>
@@ -542,11 +530,11 @@
         </annotation>
         <restriction base="ecc:s32" />
     </simpleType>
-
+　
     <simpleType name="PipelineNameType">
         <restriction base="ecc:s255" />
     </simpleType>
-
+　
     <simpleType name="PriceType">
         <restriction base="decimal" />
     </simpleType>
@@ -572,16 +560,16 @@
     <simpleType name="ProductType">
         <restriction base="ecc:s255" />
     </simpleType>
-
+　
     <simpleType name="ProductNameType">
         <restriction base="ecc:s255" />
     </simpleType>
-
-
+　
+　
     <simpleType name="ProductGradeType">
         <restriction base="ecc:s255" />
     </simpleType>
-
+　
     <simpleType name="QuantityType">
         <restriction base="decimal" />
     </simpleType>
@@ -665,18 +653,18 @@
         </annotation>
         <restriction base="ecc:s8" />
     </simpleType>
-
+　
     <simpleType name="SettlementDisruptionType">
         <restriction base="NMTOKEN">
             <enumeration value="Negociation" />
             <enumeration value="Cancellation_And_Payment" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="SO2QualityAdjustmentType">
         <restriction base="ecc:s255" />
     </simpleType>
-
+　
     <simpleType name="SpecifiedPriceType">
         <restriction base="NMTOKEN">
             <enumeration value="High" />
@@ -699,7 +687,7 @@
     <simpleType name="StrategyTypeType">
         <restriction base="ecc:s255" />
     </simpleType>
-
+　
     <simpleType name="TimeZoneOffsetType">
         <restriction base="integer">
             <maxInclusive value="12" />
@@ -784,11 +772,17 @@
             <enumeration value="in" />
             <enumeration value="M3" />
             <enumeration value="Vega" />
-            <enumeration value="IUN" />
             <enumeration value="KM3" />
             <enumeration value="EUAA" />
-            <enumeration value="MMC" />
             <enumeration value="SM3" />
+            <enumeration value="AAU" />
+            <enumeration value="NM3" />
+            <enumeration value="MCM" />
+            <enumeration value="MWhPerDay" />
+            <enumeration value="M3PerDay" />
+            <enumeration value="MCMPerDay" />
+            <enumeration value="BTUPerDay" />
+            <enumeration value="MMBTUPerDay" />
         </restriction>
     </simpleType>
     <simpleType name="UsageType">
@@ -822,5 +816,5 @@
             <minInclusive value="1" />
         </restriction>
     </simpleType>
-
+　
 </schema>
