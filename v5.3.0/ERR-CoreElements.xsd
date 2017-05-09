@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-## eRR 3.0
-## $Revision: 120823 $
--->
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd"
+<!-- 3.0-2017-03-03 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd"
     xmlns:err="http://www.efet.org/schemas/eRR/V3R0" elementFormDefault="qualified">
-
-    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd" schemaLocation="EFET-CoreCmpts-V4R2.xsd" />
+　
+    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd" schemaLocation="EFET-CoreCmpts-V4R3.xsd" />
     <xsd:import namespace="http://www.efet.org/schemas/eRR/V3R0" schemaLocation="ERR-CoreCmpts-V3R0.xsd" />
-
+　
     <!-- ================================================================== -->
-
+　
     <xsd:element name="CMSResult">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="Action" type="err:s35" />
                 <xsd:element name="Result" type="err:s35" />
-                <xsd:element name="TradeID" type="ecc:IdentificationType" minOccurs="0" />
+                <xsd:element name="TradeID" type="err:TradeIDType" minOccurs="0" />
                 <xsd:element name="UTI" type="ecc:UTIType" minOccurs="0" />
                 <xsd:element name="Reason" minOccurs="0" maxOccurs="unbounded">
                     <xsd:complexType>
@@ -28,15 +25,15 @@
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
+　
     <!-- ================================================================== -->
-
+　
     <xsd:element name="DoddFrank">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="ReportMode" type="err:ReportModeType" />
                 <xsd:element name="CreationTimestamp" type="ecc:UTCTimestampType" />
-                <xsd:element name="TradeID" type="ecc:s255" />
+                <xsd:element name="TradeID" type="err:TradeIDType" />
                 <xsd:element name="ReportingParty" type="ecc:PartyType" minOccurs="0" />
                 <xsd:element name="UniqueSwapIdentifier" type="ecc:USIType" minOccurs="0" />
                 <xsd:element name="PriorUniqueSwapIdentifiers" minOccurs="0">
@@ -78,7 +75,7 @@
                 <xsd:element name="ExerciseOfSwaption" type="xsd:boolean" minOccurs="0" />
                 <xsd:element name="ResultOfCompression" type="xsd:boolean" minOccurs="0" />
                 <xsd:element name="AdditionalRepository" type="ecc:AdditionalRepositoryType" minOccurs="0" />
-                <xsd:element name="AdditionalRepositoryTradeID" type="err:s42" minOccurs="0" />
+                <xsd:element name="AdditionalRepositoryTradeID" type="ecc:USIType" minOccurs="0" />
                 <xsd:element name="LinkID" type="err:s255" minOccurs="0" />
                 <xsd:element name="Party2Parties" type="err:s200" minOccurs="0" />
                 <xsd:element name="PostTradeEventExecutionDateTime" type="ecc:UTCTimestampType" minOccurs="0" />
@@ -96,13 +93,13 @@
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
+　
     <xsd:element name="DoddFrankResult">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="ErrAction" type="err:s35" />
                 <xsd:element name="ErrResult" type="err:s35" />
-                <xsd:element name="TradeID" type="ecc:IdentificationType" minOccurs="0" />
+                <xsd:element name="TradeID" type="err:TradeIDType" minOccurs="0" />
                 <xsd:element name="ReportingParty" type="ecc:PartyType" minOccurs="0" />
                 <xsd:element name="UniqueSwapIdentifier" type="ecc:USIType" minOccurs="0" />
                 <xsd:element name="ReportingDetails" minOccurs="0">
@@ -142,9 +139,9 @@
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
+　
     <!-- ================================================================== -->
-
+　
     <xsd:element name="Europe">
         <xsd:complexType>
             <xsd:sequence>
@@ -156,6 +153,7 @@
                             <xsd:element name="REMITReportMode" type="err:ReportModeType" />
                             <xsd:element name="Position" type="ecc:TrueFalseType" minOccurs="0" />
                             <xsd:element name="Backload" type="ecc:TrueFalseType" />
+                            <xsd:element name="Execution" type="ecc:TrueFalseType" minOccurs="0" />
                         </xsd:sequence>
                     </xsd:complexType>
                 </xsd:element>
@@ -171,18 +169,19 @@
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
+　
     <xsd:element name="EuropeResult">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="Action" type="err:s35" />
                 <xsd:element name="Result" type="err:s35" />
+                <xsd:element name="CounterpartyID" type="ecc:PartyType" minOccurs="0" />
                 <xsd:element name="Regime" type="err:EuropeRegimeType" minOccurs="0" />
                 <xsd:element name="Repository" type="err:RepositoryType" minOccurs="0" />
                 <xsd:element name="ReportingResult" minOccurs="0">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="TradeID" type="ecc:IdentificationType" />
+                            <xsd:element name="TradeID" type="err:TradeIDType" />
                             <xsd:element name="UTI" type="ecc:UTIType" minOccurs="0" />
                             <xsd:element name="Reason" minOccurs="0" maxOccurs="unbounded">
                                 <xsd:complexType>
@@ -240,9 +239,9 @@
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
+　
     <!-- ================================================================== -->
-
+　
     <xsd:element name="ODRF">
         <xsd:complexType>
             <xsd:sequence>
@@ -251,7 +250,7 @@
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
+　
     <xsd:element name="ODRFResult">
         <xsd:complexType>
             <xsd:sequence>
@@ -259,7 +258,7 @@
                 <xsd:element name="Result" type="err:s35" />
                 <xsd:element name="ErrAction" type="err:s35" />
                 <xsd:element name="ErrResult" type="err:s35" />
-                <xsd:element name="TradeID" type="ecc:IdentificationType" />
+                <xsd:element name="TradeID" type="err:TradeIDType" />
                 <xsd:element name="ReportingParty" type="ecc:PartyType" minOccurs="0" />
                 <xsd:element name="UniqueSwapIdentifier" type="ecc:USIType" minOccurs="0" />
                 <xsd:element name="ReportingDetails" minOccurs="0">
@@ -299,7 +298,7 @@
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
+　
     <xsd:element name="Confirmation">
         <xsd:complexType>
             <xsd:sequence>
@@ -307,7 +306,7 @@
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
+　
     <xsd:group name="ErrorReason">
         <xsd:sequence>
             <xsd:element name="ReasonCode" type="err:s255" />
@@ -316,7 +315,7 @@
             <xsd:element name="ReasonText" type="err:s512" minOccurs="0" />
         </xsd:sequence>
     </xsd:group>
-
+　
     <xsd:element name="EURegulatoryDetails">
         <xsd:complexType>
             <xsd:sequence>
@@ -325,7 +324,6 @@
                 <xsd:element name="ReportingTimestamp" type="ecc:UTCTimestampType" minOccurs="0" />
                 <xsd:element name="CPIDCodeType" type="err:CPIDCodeTypeType" minOccurs="0" />
                 <xsd:element name="TraderUserName" type="ecc:NameType" minOccurs="0" />
-                <xsd:element name="OtherTraderUserName" type="ecc:NameType" minOccurs="0" />
                 <xsd:element name="ReportingCounterpartyDetails" minOccurs="0">
                     <xsd:complexType>
                         <xsd:sequence>
@@ -352,6 +350,7 @@
                             <xsd:element name="OtherCounterpartyDetails" minOccurs="0">
                                 <xsd:complexType>
                                     <xsd:sequence>
+                                        <xsd:element name="TraderUserName" type="ecc:NameType" minOccurs="0" />
                                         <xsd:element name="ReportingCounterpartyDetails" minOccurs="0">
                                             <xsd:complexType>
                                                 <xsd:sequence>
@@ -392,14 +391,6 @@
                                     </xsd:sequence>
                                 </xsd:complexType>
                             </xsd:element>
-                            <xsd:element name="UProduct" minOccurs="0">
-                                <xsd:complexType>
-                                    <xsd:sequence>
-                                        <xsd:element name="UProductID1" type="err:UProductCodeType" />
-                                        <xsd:element name="Product1CodeType" type="err:TaxonomyCodeType" minOccurs="0" />
-                                    </xsd:sequence>
-                                </xsd:complexType>
-                            </xsd:element>
                             <xsd:element name="IProduct" minOccurs="0">
                                 <xsd:complexType>
                                     <xsd:sequence>
@@ -412,8 +403,15 @@
                         </xsd:sequence>
                     </xsd:complexType>
                 </xsd:element>
+                <xsd:element name="ContractType" type="err:ContractTypeType" minOccurs="0" />
                 <xsd:element name="UnderlyingCodeType" type="err:UnderlyingCodeTypeType" minOccurs="0" />
-                <xsd:element name="LinkedTransactionID" type="ecc:UTIType" minOccurs="0" />
+                <xsd:element name="LinkedTransactionInformation" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="LinkedTransactionID" type="ecc:UTIType" maxOccurs="unbounded" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
                 <xsd:element name="TradeID" type="err:TradeIDType" />
                 <xsd:element name="VenueOfExecution" type="err:VenueOfExecutionType" />
                 <xsd:element name="Compression" type="ecc:TrueFalseType" minOccurs="0" />
@@ -430,6 +428,7 @@
                 <xsd:element name="ConfirmationTimestamp" type="ecc:UTCTimestampType" minOccurs="0" />
                 <xsd:element name="NotionalAmount" type="ecc:QuantityType" minOccurs="0" />
                 <xsd:element name="EarlyTerminationDate" type="ecc:DateType" minOccurs="0" />
+                <xsd:element name="IndexValue" type="ecc:QuantityType" minOccurs="0" />
                 <xsd:element name="SettlementDates" minOccurs="0">
                     <xsd:complexType>
                         <xsd:sequence>
@@ -440,7 +439,7 @@
                 <xsd:element name="ETDProductInformation" minOccurs="0">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="Underlying" type="err:UnderlyingType" />
+                            <xsd:element name="Underlying" type="err:UnderlyingType" minOccurs="0" />
                             <xsd:element name="NotionalCurrency1" type="ecc:CurrencyCodeType" />
                             <xsd:element name="NotionalCurrency2" type="ecc:CurrencyCodeType" minOccurs="0" />
                             <xsd:element name="DeliverableCurrency" type="ecc:CurrencyCodeType" />
@@ -475,15 +474,27 @@
                 <xsd:element name="FormulaProductInformation" minOccurs="0">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="Underlying" type="err:UnderlyingType" />
+                            <xsd:element name="Underlying" type="err:UnderlyingType" minOccurs="0" />
                             <xsd:element name="CommodityBase" type="err:CommodityBaseType" />
                             <xsd:element name="CommodityDetail" type="err:CommodityDetailType" />
                             <xsd:element name="IndexCurrencyUnit" type="ecc:CurrencyCodeType" minOccurs="0" />
                         </xsd:sequence>
                     </xsd:complexType>
                 </xsd:element>
+                <xsd:element name="FinancialDeliveryInformation" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="DeliveryPointOrZone" type="ecc:AreaType" maxOccurs="unbounded" />
+                            <xsd:element name="InterconnectionPoint" type="ecc:AreaType" minOccurs="0" />
+                            <xsd:element name="QuantityVolume" type="ecc:QuantityType" />
+                            <xsd:element name="QuantityVolumeUnit" type="ecc:UnitOfMeasureType" />
+                            <xsd:element name="DeliveryStartDateAndTime" type="ecc:ClockDateTimeType" />
+                            <xsd:element name="DeliveryEndDateAndTime" type="ecc:ClockDateTimeType" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
+　
 </xsd:schema>
