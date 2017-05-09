@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-## eRR 3.0
-## $Revision: 120823 $
--->
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd"
+<!-- 3.0-2017-03-03 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd"
     xmlns:err="http://www.efet.org/schemas/eRR/V3R0" elementFormDefault="qualified">
-
-    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd" schemaLocation="EFET-CoreCmpts-V4R2.xsd" />
+　
+    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd" schemaLocation="EFET-CoreCmpts-V4R3.xsd" />
     <xsd:import namespace="http://www.efet.org/schemas/eRR/V3R0" schemaLocation="ERR-CoreCmpts-V3R0.xsd" />
-    <xsd:include schemaLocation="EFET-ConfirmationDescription-V4R2.xsd" />
-
+    <xsd:include schemaLocation="EFET-CoreElements-V4R3.xsd" />
+　
     <xsd:element name="ETDTradeDetails">
         <xsd:complexType>
             <xsd:sequence>
@@ -49,7 +46,15 @@
                                                 <xsd:sequence>
                                                     <xsd:element name="Type" type="ecc:OptionType" />
                                                     <xsd:element name="StrikePrice" type="ecc:PriceType" />
-                                                    <xsd:element name="OptionStyle" type="err:EMIROptionStyle" minOccurs="0" />
+                                                    <xsd:element name="OptionStyle" type="err:EMIROptionStyle" />
+                                                    <xsd:element name="ExerciseSchedule" minOccurs="0">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="ExerciseDateTime" type="ecc:UTCTimestampType"
+                                                                    maxOccurs="unbounded" />
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
                                                 </xsd:sequence>
                                             </xsd:complexType>
                                         </xsd:element>
