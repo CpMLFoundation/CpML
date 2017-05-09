@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-## eRR 3.0
-## $Revision: 120823 $
--->
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd"
+<!-- 3.0-2017-03-03 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd"
     xmlns:err="http://www.efet.org/schemas/eRR/V3R0" elementFormDefault="qualified">
-
-    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd" schemaLocation="EFET-CoreCmpts-V4R2.xsd" />
+　
+    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd" schemaLocation="EFET-CoreCmpts-V4R3.xsd" />
     <xsd:import namespace="http://www.efet.org/schemas/eRR/V3R0" schemaLocation="ERR-CoreCmpts-V3R0.xsd" />
-    <xsd:include schemaLocation="EFET-ConfirmationDescription-V4R2.xsd" />
-
+    <xsd:include schemaLocation="EFET-CoreElements-V4R3.xsd" />
+　
     <xsd:element name="FXTradeDetails">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:group ref="DocumentHeader" />
                 <xsd:element name="DocumentVersion" type="ecc:VersionType" />
-                <xsd:element name="TradeID" type="ecc:IdentificationType" minOccurs="0" />
+                <xsd:element name="TradeID" type="err:TradeIDType" minOccurs="0" />
                 <xsd:element name="TransactionType" type="err:FXTransactionType" />
                 <xsd:element name="FXProduct" type="err:FXProductType" />
                 <xsd:element name="BuyerParty" type="ecc:PartyType" />
                 <xsd:element name="SellerParty" type="ecc:PartyType" />
                 <xsd:element name="Agreement" type="ecc:AgreementType" />
-                <xsd:element name="TradeDate" type="ecc:DateType" />
-                <xsd:element name="TradeTime" type="ecc:TimeType" minOccurs="0" />
+                <xsd:choice>
+                    <xsd:sequence>
+                        <xsd:element name="TradeDate" type="ecc:DateType" />
+                        <xsd:element name="TradeTime" type="ecc:TimeType" minOccurs="0" />
+                    </xsd:sequence>
+                    <xsd:element name="TradeExecutionTimestamp" type="ecc:UTCOffsetTimestampType" />
+                </xsd:choice>
                 <xsd:element name="TraderName" type="ecc:NameType" minOccurs="0" />
                 <xsd:element name="Agents" minOccurs="0">
                     <xsd:complexType>
