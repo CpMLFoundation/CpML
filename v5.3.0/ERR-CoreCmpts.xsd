@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ## eRR 3.0 ## $Revision: 120823 $ -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R2/EFET-CoreCmpts-V4R2.xsd" xmlns:err="http://www.efet.org/schemas/eRR/V3R0"
-    elementFormDefault="qualified" targetNamespace="http://www.efet.org/schemas/eRR/V3R0">
-
+<!-- 3.0-2017-03-03 -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:err="http://www.efet.org/schemas/eRR/V3R0" elementFormDefault="qualified"
+    targetNamespace="http://www.efet.org/schemas/eRR/V3R0">
+　
     <simpleType name="s4">
         <restriction base="string">
             <maxLength value="4" />
@@ -10,7 +10,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s6">
         <restriction base="string">
             <maxLength value="6" />
@@ -18,7 +18,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s10">
         <restriction base="string">
             <maxLength value="10" />
@@ -26,7 +26,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s12">
         <restriction base="string">
             <maxLength value="12" />
@@ -34,7 +34,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s20">
         <restriction base="string">
             <maxLength value="20" />
@@ -42,7 +42,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s30">
         <restriction base="string">
             <maxLength value="30" />
@@ -50,7 +50,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s35">
         <restriction base="string">
             <maxLength value="35" />
@@ -58,7 +58,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s40">
         <restriction base="string">
             <maxLength value="40" />
@@ -66,7 +66,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s42">
         <restriction base="string">
             <maxLength value="42" />
@@ -74,7 +74,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s50">
         <restriction base="string">
             <maxLength value="50" />
@@ -82,7 +82,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s63">
         <restriction base="string">
             <maxLength value="63" />
@@ -90,7 +90,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s70">
         <restriction base="string">
             <maxLength value="70" />
@@ -98,7 +98,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s80">
         <restriction base="string">
             <maxLength value="80" />
@@ -106,7 +106,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s100">
         <restriction base="string">
             <maxLength value="100" />
@@ -114,7 +114,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s200">
         <restriction base="string">
             <maxLength value="200" />
@@ -122,7 +122,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s255">
         <restriction base="string">
             <maxLength value="255" />
@@ -130,7 +130,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s500">
         <restriction base="string">
             <maxLength value="500" />
@@ -138,7 +138,7 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="s512">
         <restriction base="string">
             <maxLength value="512" />
@@ -146,11 +146,11 @@
             <whiteSpace value="preserve" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="ActionDetailType">
         <restriction base="err:s50" />
     </simpleType>
-
+　
     <simpleType name="ActionType">
         <restriction base="string">
             <enumeration value="New" />
@@ -159,7 +159,7 @@
             <enumeration value="Exit" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="ActionTypeType">
         <restriction base="string">
             <enumeration value="N" />
@@ -170,22 +170,22 @@
             <enumeration value="O" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="AdditionalDataKeyType">
         <restriction base="err:s35" />
     </simpleType>
-
+　
     <simpleType name="AdditionalDataValueType">
         <restriction base="err:s255" />
     </simpleType>
-
+　
     <simpleType name="AllocationIndicatorType">
         <restriction base="string">
             <enumeration value="PreAllocation" />
             <enumeration value="PostAllocation" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="BusinessDayConventionType">
         <restriction base="string">
             <enumeration value="FOLLOWING" />
@@ -198,17 +198,16 @@
             <enumeration value="NotApplicable" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="CollateralisationType">
         <restriction base="string">
             <enumeration value="U" />
             <enumeration value="PC" />
             <enumeration value="OC" />
             <enumeration value="FC" />
-            <enumeration value="NA" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="CollateralizedType">
         <restriction base="string">
             <enumeration value="Uncollateralized" />
@@ -217,7 +216,7 @@
             <enumeration value="Fully" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="CommodityBaseType">
         <restriction base="string">
             <enumeration value="AG" />
@@ -230,7 +229,7 @@
             <enumeration value="NA" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="CommodityDetailType">
         <restriction base="string">
             <enumeration value="GO" />
@@ -250,7 +249,7 @@
             <enumeration value="NA" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="ConfirmationMeansType">
         <restriction base="string">
             <enumeration value="Y" />
@@ -258,14 +257,30 @@
             <enumeration value="E" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="ConfirmationType">
         <restriction base="string">
             <enumeration value="Electronic" />
             <enumeration value="Non-Electronic" />
         </restriction>
     </simpleType>
-
+　
+    <simpleType name="ContractTypeType">
+        <restriction base="string">
+            <enumeration value="AU" />
+            <enumeration value="CO" />
+            <enumeration value="FW" />
+            <enumeration value="FU" />
+            <enumeration value="OP" />
+            <enumeration value="OP_FW" />
+            <enumeration value="OP_FU" />
+            <enumeration value="OP_SW" />
+            <enumeration value="SP" />
+            <enumeration value="SW" />
+            <enumeration value="OT" />
+        </restriction>
+    </simpleType>
+　
     <simpleType name="CorporateSectorType">
         <restriction base="string">
             <enumeration value="A" />
@@ -278,18 +293,18 @@
             <enumeration value="U" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="CPDomicileType">
         <restriction base="err:s500" />
     </simpleType>
-
+　
     <simpleType name="CPFinancialNatureType">
         <restriction base="string">
             <enumeration value="F" />
             <enumeration value="N" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="CPIDCodeTypeType">
         <restriction base="string">
             <enumeration value="LEI" />
@@ -298,15 +313,15 @@
             <enumeration value="Client_Code" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="CPNameType">
         <restriction base="err:s100" />
     </simpleType>
-
+　
     <simpleType name="DayCountFractionType">
         <restriction base="err:s63" />
     </simpleType>
-
+　
     <simpleType name="DFTradeEventType">
         <restriction base="string">
             <enumeration value="Allocation" />
@@ -324,7 +339,7 @@
             <enumeration value="PartialTermination" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="EMIROptionStyle">
         <restriction base="string">
             <enumeration value="A" />
@@ -333,7 +348,7 @@
             <enumeration value="S" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="EProduct1CodeType">
         <restriction base="string">
             <enumeration value="CO" />
@@ -344,7 +359,7 @@
             <enumeration value="OT" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="EProduct2CodeType">
         <restriction base="string">
             <enumeration value="CD" />
@@ -356,7 +371,7 @@
             <enumeration value="OT" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="ETDRoleType">
         <restriction base="string">
             <enumeration value="Broker" />
@@ -366,7 +381,7 @@
             <enumeration value="Trader" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="ETDTransactionType">
         <restriction base="string">
             <enumeration value="FOR" />
@@ -385,14 +400,14 @@
             <enumeration value="SPT" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="EuropeRegimeType">
         <restriction base="string">
             <enumeration value="Remit" />
             <enumeration value="Emir" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="ExecutionVenueType">
         <restriction base="string">
             <enumeration value="SEF" />
@@ -401,13 +416,13 @@
             <enumeration value="LEI" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="FrequencyPeriodType">
         <restriction base="string">
             <pattern value="([1-9][0-9]{0,2}[DWMY]|1T)" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="FXProductType">
         <restriction base="string">
             <enumeration value="FXSpot" />
@@ -418,19 +433,19 @@
             <enumeration value="FXOption_Non_Deliverable" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="FXRateSourcePageHeadingType">
         <restriction base="err:s255" />
     </simpleType>
-
+　
     <simpleType name="FXRateSourcePageType">
         <restriction base="err:s255" />
     </simpleType>
-
+　
     <simpleType name="FXReferenceType">
         <restriction base="err:s255" />
     </simpleType>
-
+　
     <simpleType name="FXTransactionType">
         <restriction base="string">
             <enumeration value="FOR" />
@@ -440,15 +455,15 @@
             <enumeration value="SPT" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="IProduct1CodeType">
         <restriction base="err:s12" />
     </simpleType>
-
+　
     <simpleType name="IProduct2CodeType">
         <restriction base="err:s6" />
     </simpleType>
-
+　
     <simpleType name="IRSProductType">
         <restriction base="string">
             <enumeration value="IRSwap" />
@@ -456,7 +471,7 @@
             <enumeration value="CrossCurrency" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="IRSTransactionType">
         <restriction base="string">
             <enumeration value="FXD_SWP" />
@@ -467,28 +482,30 @@
             <enumeration value="OPT_FLT_SWP" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="LoadTypeType">
         <restriction base="string">
             <enumeration value="BL" />
             <enumeration value="PL" />
             <enumeration value="OP" />
             <enumeration value="BH" />
+            <enumeration value="SH" />
+            <enumeration value="GD" />
             <enumeration value="OT" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="LotsType">
         <restriction base="integer">
-            <minInclusive value="1" />
+            <minInclusive value="0" />
             <maxInclusive value="9999999999999999" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="MasterAgreementVersionType">
         <restriction base="err:s4" />
     </simpleType>
-
+　
     <simpleType name="MessageType">
         <restriction base="string">
             <enumeration value="RealTime" />
@@ -504,7 +521,7 @@
             <enumeration value="Document" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="OnBehalfOfType">
         <restriction base="string">
             <enumeration value="Buyer" />
@@ -512,7 +529,7 @@
             <enumeration value="Buyer_And_Seller" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="PayRelativeToType">
         <restriction base="string">
             <enumeration value="CalculationPeriodStartDate" />
@@ -522,14 +539,14 @@
             <enumeration value="ValuationDate" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="PeriodMultiplierType">
         <restriction base="integer">
             <maxInclusive value="999" />
             <minInclusive value="1" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="PeriodType">
         <restriction base="string">
             <enumeration value="D" />
@@ -539,17 +556,17 @@
             <enumeration value="T" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="PortfolioCodeType">
         <restriction base="err:s20" />
     </simpleType>
-
+　
     <simpleType name="PriceNotationType">
         <restriction base="string">
             <pattern value="([A-Z]{3}|100)" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="ProductIDPrefixType">
         <restriction base="string">
             <enumeration value="UPI" />
@@ -557,7 +574,7 @@
             <enumeration value="GTR" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="QuoteBasisType">
         <restriction base="string">
             <enumeration value="Currency1PerCurrency2" />
@@ -566,11 +583,11 @@
             <enumeration value="CallCurrencyPerPutCurrency" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="RateIndexType">
         <restriction base="err:s63" />
     </simpleType>
-
+　
     <simpleType name="ReportingJurisdictionType">
         <restriction base="string">
             <enumeration value="SEC" />
@@ -581,7 +598,7 @@
             <enumeration value="Other" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="ReportingRoleType">
         <restriction base="string">
             <enumeration value="Trader" />
@@ -591,7 +608,7 @@
             <enumeration value="Clearing_Agent" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="ReportModeType">
         <restriction base="string">
             <enumeration value="Report" />
@@ -599,22 +616,22 @@
             <enumeration value="CmsReport" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="RepositoryType">
         <restriction base="err:s20" />
     </simpleType>
-
+　
     <simpleType name="ResetRelativeToType">
         <restriction base="string">
             <enumeration value="CalculationPeriodStartDate" />
             <enumeration value="CalculationPeriodEndDate" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="RollConventionType">
         <restriction base="err:s255" />
     </simpleType>
-
+　
     <simpleType name="SDRTransactionType">
         <restriction base="string">
             <enumeration value="Trade" />
@@ -631,14 +648,14 @@
             <enumeration value="Historical-Expired" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="ServiceMode">
         <restriction base="string">
             <enumeration value="YES" />
             <enumeration value="NO" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="SettlementType">
         <restriction base="string">
             <enumeration value="C" />
@@ -646,7 +663,7 @@
             <enumeration value="O" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="StateType">
         <restriction base="string">
             <enumeration value="Acknowledgement" />
@@ -654,69 +671,68 @@
             <enumeration value="Error" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="SuppressPriceDisseminationType">
         <restriction base="string">
             <enumeration value="RT" />
             <enumeration value="None" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="TaxonomyCodeType">
         <restriction base="string">
             <enumeration value="EMIR_Taxonomy" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="TaxonomyType">
         <restriction base="string">
-            <enumeration value="U" />
             <enumeration value="I" />
             <enumeration value="E" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="TradeIDType">
         <restriction base="err:s30" />
     </simpleType>
-
+　
     <simpleType name="TradingCapacityType">
         <restriction base="string">
             <enumeration value="A" />
             <enumeration value="P" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="UnderlyingCodeTypeType">
         <restriction base="err:s20" />
     </simpleType>
-
+　
     <simpleType name="UnderlyingType">
         <restriction base="err:s255" />
     </simpleType>
-
+　
     <simpleType name="UProductCodeType">
         <restriction base="err:s255" />
     </simpleType>
-
+　
     <simpleType name="ValuationTypeType">
         <restriction base="string">
             <enumeration value="M" />
             <enumeration value="O" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="VenueOfExecutionType">
         <restriction base="err:s4" />
     </simpleType>
-
+　
     <simpleType name="VerificationStatusType">
         <restriction base="string">
             <enumeration value="Verified" />
             <enumeration value="Disputed" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="VerificationType">
         <restriction base="string">
             <enumeration value="Electronic" />
@@ -724,7 +740,7 @@
             <enumeration value="Unverified" />
         </restriction>
     </simpleType>
-
+　
     <simpleType name="WeekDayType">
         <restriction base="string">
             <enumeration value="MON" />
@@ -737,5 +753,5 @@
             <enumeration value="TBILL" />
         </restriction>
     </simpleType>
-
+　
 </schema>
