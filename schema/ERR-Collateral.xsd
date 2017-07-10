@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 3.0-2017-03-03 -->
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd"
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecc="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts.xsd"
     xmlns:err="http://www.efet.org/schemas/eRR/V3R0" elementFormDefault="qualified">
 　
-    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd" schemaLocation="EFET-CoreCmpts-V4R3.xsd" />
-    <xsd:import namespace="http://www.efet.org/schemas/eRR/V3R0" schemaLocation="ERR-CoreCmpts-V3R0.xsd" />
+    <xsd:import namespace="http://www.efet.org/schemas/eCM/V4R3/EFET-CoreCmpts-V4R3.xsd" schemaLocation="EFET-CoreCmpts.xsd" />
+    <xsd:import namespace="http://www.efet.org/schemas/eRR/V3R0" schemaLocation="ERR-CoreCmpts.xsd" />
 　
     <xsd:element name="RegulatoryCollateral">
         <xsd:complexType>
