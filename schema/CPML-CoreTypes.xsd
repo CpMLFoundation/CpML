@@ -1,0 +1,1533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- V6.4.3-2017-09-19 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xsd:simpleType name="s3">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="3" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s4">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="4" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s5">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="5" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s6">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="6" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s8">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s10">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s16">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s20">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="20" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s30">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s32">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="32" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s35">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="35" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s40">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="40" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s42">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="42" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s48">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="48" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s50">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s52">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="52" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s63">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="63" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s70">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="70" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s80">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="80" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s100">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s200">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="200" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s255">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="255" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s500">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="500" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="s512">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="512" />
+            <xsd:minLength value="1" />
+            <xsd:whiteSpace value="preserve" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    
+    <xsd:simpleType name="UTCOffsetTimestampType">
+        <xsd:restriction base="xsd:dateTime">
+            <xsd:pattern value="20..-..-..T..:..:..(Z|[\+-][01][0-9]:(00|15|30|45))" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ClockDateTimeType">
+        <xsd:restriction base="xsd:dateTime">
+            <xsd:pattern value="20..-..-..T..:..:.." />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DateType">
+        <xsd:restriction base="xsd:date">
+            <xsd:pattern value="....-..-.." />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TimeType">
+        <xsd:restriction base="xsd:time">
+            <xsd:pattern value="..:..:..Z?" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TrueFalseType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="true" />
+            <xsd:enumeration value="false" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="UTCTimestampType">
+        <xsd:restriction base="xsd:dateTime" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ActionType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="New" />
+            <xsd:enumeration value="Modify" />
+            <xsd:enumeration value="Cancel" />
+            <xsd:enumeration value="Exit" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ActionTypeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="N" />
+            <xsd:enumeration value="M" />
+            <xsd:enumeration value="E" />
+            <xsd:enumeration value="C" />
+            <xsd:enumeration value="Z" />
+            <xsd:enumeration value="P" />
+            <xsd:enumeration value="R" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="AdditionalDataKeyType">
+        <xsd:restriction base="s35" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="AdditionalDataValueType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="AllocationIndicatorType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="PreAllocation" />
+            <xsd:enumeration value="PostAllocation" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="AdditionalRepositoryType">
+        <xsd:simpleContent>
+            <xsd:extension base="s200">
+                <xsd:attribute name="Prefix" type="s80" use="required" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="AgentType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Broker" />
+            <xsd:enumeration value="ECVNA" />
+            <xsd:enumeration value="ClearingBroker" />
+            <xsd:enumeration value="SettlementAgent" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="AgreementType">
+        <xsd:restriction base="s35" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="AreaType">
+        <xsd:restriction base="s16" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="AssetClassType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Commodity" />
+            <xsd:enumeration value="ForeignExchange" />
+            <xsd:enumeration value="Equity" />
+            <xsd:enumeration value="EquityBond" />
+            <xsd:enumeration value="InterestRate" />
+            <xsd:enumeration value="Credit" />
+            <xsd:enumeration value="InterestRateODRF" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="AttachmentMimeType">
+        <xsd:restriction base="s32">
+            <xsd:enumeration value="application/pdf" />
+            <xsd:enumeration value="application/msword" />
+            <xsd:enumeration value="application/excel" />
+            <xsd:enumeration value="application/vnd.ms-excel" />
+            <xsd:enumeration value="application/x-msexcel" />
+            <xsd:enumeration value="application/x-excel" />
+            <xsd:enumeration value="application/mspowerpoint" />
+            <xsd:enumeration value="application/powerpoint" />
+            <xsd:enumeration value="application/x-mspowerpoint" />
+            <xsd:enumeration value="application/vnd.ms-powerpoint" />
+            <xsd:enumeration value="image/gif" />
+            <xsd:enumeration value="image/jpeg" />
+            <xsd:enumeration value="image/pjpeg" />
+            <xsd:enumeration value="image/png" />
+            <xsd:enumeration value="image/tiff" />
+            <xsd:enumeration value="image/x-tiff" />
+            <xsd:enumeration value="text/csv" />
+            <xsd:enumeration value="text/plain" />
+            <xsd:enumeration value="text/xml" />
+            <xsd:enumeration value="application/xml" />
+            <xsd:enumeration value="application/zip" />
+            <xsd:enumeration value="application/x-gzip" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="FilenameType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="BrokerIDType">
+        <xsd:restriction base="s5" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="BSCPartyIDType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="BTUQualityAdjustmentType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="BullionType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Gold" />
+            <xsd:enumeration value="Palladium" />
+            <xsd:enumeration value="Platinum" />
+            <xsd:enumeration value="Silver" />
+            <xsd:enumeration value="RhodiumSponge" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="BusinessDayConventionType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="FOLLOWING" />
+            <xsd:enumeration value="FRN" />
+            <xsd:enumeration value="MODFOLLOWING" />
+            <xsd:enumeration value="PRECEDING" />
+            <xsd:enumeration value="MODPRECEDING" />
+            <xsd:enumeration value="NEAREST" />
+            <xsd:enumeration value="NONE" />
+            <xsd:enumeration value="NotApplicable" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ClassificationOfProductTypeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="C" />
+            <xsd:enumeration value="U" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ClassificationOfProductType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="CollateralisationType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="U" />
+            <xsd:enumeration value="PC" />
+            <xsd:enumeration value="OC" />
+            <xsd:enumeration value="FC" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="CollateralizedType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Uncollateralized" />
+            <xsd:enumeration value="Partially" />
+            <xsd:enumeration value="OneWay" />
+            <xsd:enumeration value="Fully" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="CommodityBaseType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="AG" />
+            <xsd:enumeration value="EN" />
+            <xsd:enumeration value="FR" />
+            <xsd:enumeration value="ME" />
+            <xsd:enumeration value="IN" />
+            <xsd:enumeration value="EV" />
+            <xsd:enumeration value="EX" />
+            <xsd:enumeration value="OT" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="CommodityDetailType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="GO" />
+            <xsd:enumeration value="DA" />
+            <xsd:enumeration value="LI" />
+            <xsd:enumeration value="FO" />
+            <xsd:enumeration value="SO" />
+            <xsd:enumeration value="SF" />
+            <xsd:enumeration value="OI" />
+            <xsd:enumeration value="NG" />
+            <xsd:enumeration value="CO" />
+            <xsd:enumeration value="EL" />
+            <xsd:enumeration value="IE" />
+            <xsd:enumeration value="DR" />
+            <xsd:enumeration value="WT" />
+            <xsd:enumeration value="PR" />
+            <xsd:enumeration value="NP" />
+            <xsd:enumeration value="WE" />
+            <xsd:enumeration value="EM" />
+            <xsd:enumeration value="OT" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="CommonPricingType">
+        <xsd:restriction base="TrueFalseType" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ComplexTradeIDType">
+        <xsd:restriction base="s35" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ConfirmationMeansType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Y" />
+            <xsd:enumeration value="N" />
+            <xsd:enumeration value="E" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ConfirmationType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Electronic" />
+            <xsd:enumeration value="Non-Electronic" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ContractTypeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="AU" />
+            <xsd:enumeration value="CO" />
+            <xsd:enumeration value="FW" />
+            <xsd:enumeration value="FU" />
+            <xsd:enumeration value="OP" />
+            <xsd:enumeration value="OP_FW" />
+            <xsd:enumeration value="OP_FU" />
+            <xsd:enumeration value="OP_SW" />
+            <xsd:enumeration value="SP" />
+            <xsd:enumeration value="SW" />
+            <xsd:enumeration value="OT" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ContractType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Base" />
+            <xsd:enumeration value="Peak" />
+            <xsd:enumeration value="OffPeak" />
+            <xsd:enumeration value="Custom" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="CorporateSectorType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="A" />
+            <xsd:enumeration value="C" />
+            <xsd:enumeration value="F" />
+            <xsd:enumeration value="I" />
+            <xsd:enumeration value="L" />
+            <xsd:enumeration value="O" />
+            <xsd:enumeration value="R" />
+            <xsd:enumeration value="U" />
+            <xsd:enumeration value="1" />
+            <xsd:enumeration value="2" />
+            <xsd:enumeration value="3" />
+            <xsd:enumeration value="4" />
+            <xsd:enumeration value="5" />
+            <xsd:enumeration value="6" />
+            <xsd:enumeration value="7" />
+            <xsd:enumeration value="8" />
+            <xsd:enumeration value="9" />
+            <xsd:enumeration value="10" />
+            <xsd:enumeration value="11" />
+            <xsd:enumeration value="12" />
+            <xsd:enumeration value="13" />
+            <xsd:enumeration value="14" />
+            <xsd:enumeration value="15" />
+            <xsd:enumeration value="16" />
+            <xsd:enumeration value="17" />
+            <xsd:enumeration value="18" />
+            <xsd:enumeration value="19" />
+            <xsd:enumeration value="20" />
+            <xsd:enumeration value="21" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="CountryCodeType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:maxLength value="2" />
+            <xsd:minLength value="2" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="CPFinancialNatureType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="F" />
+            <xsd:enumeration value="N" />
+            <xsd:enumeration value="C" />
+            <xsd:enumeration value="O" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="CurrencyCodeType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:maxLength value="3" />
+            <xsd:minLength value="3" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="CurrencyCodeTypeWithFractionOption">
+        <xsd:simpleContent>
+            <xsd:extension base="CurrencyCodeType">
+                <xsd:attribute name="UseFractionUnit" type="xsd:boolean" default="false" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="CycleType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DayCountFractionType">
+        <xsd:restriction base="s63" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DayOfWeekType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="WD" />
+            <xsd:enumeration value="WN" />
+            <xsd:enumeration value="MO" />
+            <xsd:enumeration value="TU" />
+            <xsd:enumeration value="WE" />
+            <xsd:enumeration value="TH" />
+            <xsd:enumeration value="FR" />
+            <xsd:enumeration value="SA" />
+            <xsd:enumeration value="SU" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DeliveryContingencyType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DeliveryPointAreaType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DeliveryDateType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Spot" />
+            <xsd:enumeration value="First_Nearby" />
+            <xsd:enumeration value="Second_Nearby" />
+            <xsd:enumeration value="Third_Nearby" />
+            <xsd:enumeration value="Sixth_Nearby" />
+            <xsd:enumeration value="Twelfth_Nearby" />
+            <xsd:enumeration value="First_Nearby_Including" />
+            <xsd:enumeration value="Second_Nearby_Including" />
+            <xsd:enumeration value="Third_Nearby_Including" />
+            <xsd:enumeration value="Sixth_Nearby_Including" />
+            <xsd:enumeration value="Twelfth_Nearby_Including" />
+            <xsd:enumeration value="First_Nearby_Excluding" />
+            <xsd:enumeration value="Second_Nearby_Excluding" />
+            <xsd:enumeration value="Third_Nearby_Excluding" />
+            <xsd:enumeration value="Sixth_Nearby_Excluding" />
+            <xsd:enumeration value="Twelfth_Nearby_Excluding" />
+            <xsd:enumeration value="Calculation_Period" />
+            <xsd:enumeration value="Month_Ahead" />
+            <xsd:enumeration value="Day_Ahead" />
+            <xsd:enumeration value="Dated_Contract" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DeliveryTypeType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="firm" />
+            <xsd:enumeration value="nonFirm" />
+            <xsd:enumeration value="systemFirm" />
+            <xsd:enumeration value="unitFirm" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DFTradeEventType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Allocation" />
+            <xsd:enumeration value="Backload" />
+            <xsd:enumeration value="Compression" />
+            <xsd:enumeration value="EconomicAmendment" />
+            <xsd:enumeration value="NoneconomicAmendment" />
+            <xsd:enumeration value="Modify" />
+            <xsd:enumeration value="Exercise" />
+            <xsd:enumeration value="Increase" />
+            <xsd:enumeration value="NewTrade" />
+            <xsd:enumeration value="Novation" />
+            <xsd:enumeration value="NovationFee" />
+            <xsd:enumeration value="FullTermination" />
+            <xsd:enumeration value="PartialTermination" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DocumentType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="ACK" />
+            <xsd:enumeration value="BCN" />
+            <xsd:enumeration value="BFI" />
+            <xsd:enumeration value="BMN" />
+            <xsd:enumeration value="BRS" />
+            <xsd:enumeration value="CAN" />
+            <xsd:enumeration value="CNF" />
+            <xsd:enumeration value="GNF" />
+            <xsd:enumeration value="MSA" />
+            <xsd:enumeration value="MSR" />
+            <xsd:enumeration value="MSU" />
+            <xsd:enumeration value="REJ" />
+            <xsd:enumeration value="SCN" />
+            <xsd:enumeration value="TUR" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DocumentDescriptionType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="CONFIRM" />
+            <xsd:enumeration value="DRAFT" />
+            <xsd:enumeration value="CREDIT_ANNEX" />
+            <xsd:enumeration value="HISTORICAL" />
+            <xsd:enumeration value="HISTORICALEXPIRED" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="DoddFrankType">
+        <xsd:sequence>
+            <xsd:element name="UniqueSwapIdentifier" type="USIType" form="unqualified" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="BlockUniqueSwapIdentifier" type="USIType" form="unqualified" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ReportingParty" type="PartyType" form="unqualified" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="AdditionalRepository" type="AdditionalRepositoryType" form="unqualified" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="HedgingExemptionType" type="HedgingExemptionType" form="unqualified" minOccurs="0" maxOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="DurationType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="N" />
+            <xsd:enumeration value="H" />
+            <xsd:enumeration value="D" />
+            <xsd:enumeration value="W" />
+            <xsd:enumeration value="M" />
+            <xsd:enumeration value="Q" />
+            <xsd:enumeration value="S" />
+            <xsd:enumeration value="Y" />
+            <xsd:enumeration value="O" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="EnergyAccountType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Production" />
+            <xsd:enumeration value="Consumption" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="EnergyProductType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Power" />
+            <xsd:enumeration value="Gas" />
+            <xsd:enumeration value="Oil" />
+            <xsd:enumeration value="Coal" />
+            <xsd:enumeration value="Bullion" />
+            <xsd:enumeration value="Metal" />
+            <xsd:enumeration value="Agriculturals" />
+            <xsd:enumeration value="Paper" />
+            <xsd:enumeration value="ReactivePower" />
+            <xsd:enumeration value="EUAPhase_1" />
+            <xsd:enumeration value="EUAPhase_2" />
+            <xsd:enumeration value="EUAPhase_3" />
+            <xsd:enumeration value="CER" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="EMIROptionStyle">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="A" />
+            <xsd:enumeration value="B" />
+            <xsd:enumeration value="E" />
+            <xsd:enumeration value="S" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="EProduct1CodeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="CO" />
+            <xsd:enumeration value="CR" />
+            <xsd:enumeration value="CU" />
+            <xsd:enumeration value="EQ" />
+            <xsd:enumeration value="IR" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="EProduct2CodeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="CD" />
+            <xsd:enumeration value="FR" />
+            <xsd:enumeration value="FU" />
+            <xsd:enumeration value="FW" />
+            <xsd:enumeration value="OP" />
+            <xsd:enumeration value="SW" />
+            <xsd:enumeration value="OT" />
+            <xsd:enumeration value="ST" />
+            <xsd:enumeration value="SB" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="EquipmentType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Barge" />
+            <xsd:enumeration value="Truck" />
+            <xsd:enumeration value="Railcar" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ETDRoleType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Broker" />
+            <xsd:enumeration value="ClearingBroker" />
+            <xsd:enumeration value="ClearingHouse" />
+            <xsd:enumeration value="Exchange" />
+            <xsd:enumeration value="Trader" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ETDTransactionType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="FOR" />
+            <xsd:enumeration value="OPT" />
+            <xsd:enumeration value="PHYS_INX" />
+            <xsd:enumeration value="OPT_PHYS_INX" />
+            <xsd:enumeration value="FXD_SWP" />
+            <xsd:enumeration value="FXD_FXD_SWP" />
+            <xsd:enumeration value="FLT_SWP" />
+            <xsd:enumeration value="OPT_FXD_SWP" />
+            <xsd:enumeration value="OPT_FXD_FXD_SWP" />
+            <xsd:enumeration value="OPT_FLT_SWP" />
+            <xsd:enumeration value="OPT_FIN_INX" />
+            <xsd:enumeration value="FUT" />
+            <xsd:enumeration value="OPT_FUT" />
+            <xsd:enumeration value="SPT" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="EUAAccountCodeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-Z]{2}-[0-9]{3}-[0-9]{3}([0-9]|-0)?" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="EUReporting">
+        <xsd:sequence>
+            <xsd:element name="UTI" type="UTIType" form="unqualified" minOccurs="0" maxOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="EuropeRegimeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Remit" />
+            <xsd:enumeration value="Emir" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ExecutionVenueType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="SEF" />
+            <xsd:enumeration value="DCM" />
+            <xsd:enumeration value="Off-Facility" />
+            <xsd:enumeration value="LEI" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="FrequencyPeriodType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="([1-9][0-9]{0,2}[DWMY]|1T)" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="FXConversionMethodType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Daily" />
+            <xsd:enumeration value="Monthly" />
+            <xsd:enumeration value="Mixed" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="FXProductType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="FXSpot" />
+            <xsd:enumeration value="FXForward" />
+            <xsd:enumeration value="FXSwap" />
+            <xsd:enumeration value="FXOption" />
+            <xsd:enumeration value="FXForward_Non_Delivererable" />
+            <xsd:enumeration value="FXOption_Non_Deliverable" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="FXRateSourcePageHeadingType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="FXRateSourcePageType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="FXReferenceType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="FXTransactionType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="FOR" />
+            <xsd:enumeration value="OPT" />
+            <xsd:enumeration value="FXD_FXD_SWP" />
+            <xsd:enumeration value="OPT_FXD_FXD_SWP" />
+            <xsd:enumeration value="SPT" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="HedgingExemptionType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Bona_Fide_Hedge" />
+            <xsd:enumeration value="Pass-Through_Swap" />
+            <xsd:enumeration value="Anticipated_Production" />
+            <xsd:enumeration value="Anticipated_Requirement" />
+            <xsd:enumeration value="Anticipated_Merchandising" />
+            <xsd:enumeration value="Anticipated_Royalty" />
+            <xsd:enumeration value="Anticipated_Service" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="IdentificationOfProductTypeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="I" />
+            <xsd:enumeration value="A" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="IdentificationOfProductType">
+        <xsd:restriction base="s48" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="IdentificationType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="IncotermsType">
+        <xsd:restriction base="s3" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="IndexCommodityType">
+        <xsd:restriction base="s30" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="IndexStrikePriceStyleType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Index_Following" />
+            <xsd:enumeration value="Index_Dated" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="IRSProductType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="IRSwap" />
+            <xsd:enumeration value="Basis" />
+            <xsd:enumeration value="CrossCurrency" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="IRSTransactionType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="FXD_SWP" />
+            <xsd:enumeration value="FXD_FXD_SWP" />
+            <xsd:enumeration value="FLT_SWP" />
+            <xsd:enumeration value="OPT_FXD_SWP" />
+            <xsd:enumeration value="OPT_FXD_FXD_SWP" />
+            <xsd:enumeration value="OPT_FLT_SWP" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ISDACommodityDefinitionsType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="LevelType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="T" />
+            <xsd:enumeration value="P" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="LoadDeliveryIntervalType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="(([01][0-9]|2[0-3]):[0-5][0-9])|24:00" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="LoadTypeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="BL" />
+            <xsd:enumeration value="PL" />
+            <xsd:enumeration value="OP" />
+            <xsd:enumeration value="BH" />
+            <xsd:enumeration value="SH" />
+            <xsd:enumeration value="GD" />
+            <xsd:enumeration value="OT" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="LotsType">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0" />
+            <xsd:maxInclusive value="9999999999999999" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="MasterAgreementVersionType">
+        <xsd:restriction base="s4" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="MatchFieldType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="tradeData" />
+            <xsd:enumeration value="fee" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="MessageType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="RealTime" />
+            <xsd:enumeration value="PET" />
+            <xsd:enumeration value="Confirm" />
+            <xsd:enumeration value="Snapshot" />
+            <xsd:enumeration value="RealTime-PET" />
+            <xsd:enumeration value="PET-Confirm" />
+            <xsd:enumeration value="RealTime-PET-Confirm" />
+            <xsd:enumeration value="Valuation" />
+            <xsd:enumeration value="Verification" />
+            <xsd:enumeration value="None" />
+            <xsd:enumeration value="Document" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="MetalMaterialType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Aluminum-Primary" />
+            <xsd:enumeration value="Cobalt" />
+            <xsd:enumeration value="Copper" />
+            <xsd:enumeration value="Lead" />
+            <xsd:enumeration value="Molybdenum" />
+            <xsd:enumeration value="NASAA" />
+            <xsd:enumeration value="Nickel" />
+            <xsd:enumeration value="Steel" />
+            <xsd:enumeration value="Tin" />
+            <xsd:enumeration value="Uranium" />
+            <xsd:enumeration value="Zinc" />
+            <xsd:enumeration value="Gold" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="NameType">
+        <xsd:restriction base="s35" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="NotificationFieldType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="preliminary" />
+            <xsd:enumeration value="final" />
+            <xsd:enumeration value="reverse" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="OnBehalfOfType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Buyer" />
+            <xsd:enumeration value="Seller" />
+            <xsd:enumeration value="Buyer_And_Seller" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="OptionStyleType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="American" />
+            <xsd:enumeration value="European" />
+            <xsd:enumeration value="Asian" />
+            <xsd:enumeration value="Cap" />
+            <xsd:enumeration value="Floor" />
+            <xsd:enumeration value="Collar" />
+            <xsd:enumeration value="Bermudan" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="OptionType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Call" />
+            <xsd:enumeration value="Put" />
+            <xsd:enumeration value="Capped_Call" />
+            <xsd:enumeration value="Floored_Put" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="PartyType">
+        <xsd:restriction base="s20" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="PaymentEventType">
+        <xsd:restriction base="s32" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="PayRelativeToType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="CalculationPeriodStartDate" />
+            <xsd:enumeration value="CalculationPeriodEndDate" />
+            <xsd:enumeration value="LastPricingDate" />
+            <xsd:enumeration value="ResetDate" />
+            <xsd:enumeration value="ValuationDate" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="PeriodMultiplierType">
+        <xsd:restriction base="xsd:integer">
+            <xsd:maxInclusive value="999" />
+            <xsd:minInclusive value="1" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="PeriodType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="D" />
+            <xsd:enumeration value="W" />
+            <xsd:enumeration value="M" />
+            <xsd:enumeration value="Y" />
+            <xsd:enumeration value="T" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="PipelineNameType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="PortfolioCodeType">
+        <xsd:restriction base="s52">
+            <xsd:pattern value="([a-zA-Z0-9]([a-zA-Z0-9:.\-_]*[a-zA-Z0-9])?)" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="PriceNotationType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="([A-Z]{3}|100)" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="PriceType">
+        <xsd:restriction base="xsd:decimal" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="PricingDateType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="CBD" />
+            <xsd:enumeration value="Monday" />
+            <xsd:enumeration value="Tuesday" />
+            <xsd:enumeration value="Wednesday" />
+            <xsd:enumeration value="Thursday" />
+            <xsd:enumeration value="Friday" />
+            <xsd:enumeration value="Saturday" />
+            <xsd:enumeration value="Sunday" />
+            <xsd:enumeration value="Monthly" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ProcessFieldType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="withCp" />
+            <xsd:enumeration value="withoutCp" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ProductIDPrefixType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="UPI" />
+            <xsd:enumeration value="ISDA" />
+            <xsd:enumeration value="GTR" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ProductType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ProductNameType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ProductGradeType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="QuantityType">
+        <xsd:restriction base="xsd:decimal" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="QuoteBasisType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Currency1PerCurrency2" />
+            <xsd:enumeration value="Currency2PerCurrency1" />
+            <xsd:enumeration value="PutCurrencyPerCallCurrency" />
+            <xsd:enumeration value="CallCurrencyPerPutCurrency" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="RateIndexType">
+        <xsd:restriction base="s63" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ReasonCodeType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="XML:ValidationFailure" />
+            <xsd:enumeration value="ebxml:ValueNotRecognized" />
+            <xsd:enumeration value="ebxml:NotSupported" />
+            <xsd:enumeration value="ebxml:Inconsistent" />
+            <xsd:enumeration value="ebxml:OtherXML" />
+            <xsd:enumeration value="ebxml:DeliveryFailure" />
+            <xsd:enumeration value="ebxml:TimeToLiveExpired" />
+            <xsd:enumeration value="ebxml:SecurityFailure" />
+            <xsd:enumeration value="ebxml:MimeProblem" />
+            <xsd:enumeration value="ebxml:Unknown" />
+            <xsd:enumeration value="efet:InvalidData" />
+            <xsd:enumeration value="efet:TimeOut" />
+            <xsd:enumeration value="efet:InvalidMatchAttempt" />
+            <xsd:enumeration value="efet:AmendmentError" />
+            <xsd:enumeration value="efet:IDNotFound" />
+            <xsd:enumeration value="efet:UniquenessViolation" />
+            <xsd:enumeration value="efet:NoMatch" />
+            <xsd:enumeration value="efet:ReferencedDocNotExists" />
+            <xsd:enumeration value="efet:RefDocInvalidState" />
+            <xsd:enumeration value="efet:MinorVersionInInvalidState" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ReasonTextType">
+        <xsd:restriction base="s512" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ReportingJurisdictionType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="SEC" />
+            <xsd:enumeration value="CFTC" />
+            <xsd:enumeration value="HKMA" />
+            <xsd:enumeration value="ODRF" />
+            <xsd:enumeration value="ESMA" />
+            <xsd:enumeration value="Other" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ReportingRoleType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Trader" />
+            <xsd:enumeration value="CP_Agent" />
+            <xsd:enumeration value="Internal_Agent" />
+            <xsd:enumeration value="Execution_Agent" />
+            <xsd:enumeration value="Clearing_Agent" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ReportModeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Report" />
+            <xsd:enumeration value="NoReport" />
+            <xsd:enumeration value="CmsReport" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ReportTrackingNumberType">
+        <xsd:restriction base="s52" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="RepositoryType">
+        <xsd:restriction base="s20" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ResetRelativeToType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="CalculationPeriodStartDate" />
+            <xsd:enumeration value="CalculationPeriodEndDate" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="RoleType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Trader" />
+            <xsd:enumeration value="Broker" />
+            <xsd:enumeration value="ClearingHouse" />
+            <xsd:enumeration value="ECVNA" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="RollConventionType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="RoundingType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="0" />
+            <xsd:enumeration value="1" />
+            <xsd:enumeration value="2" />
+            <xsd:enumeration value="3" />
+            <xsd:enumeration value="4" />
+            <xsd:enumeration value="5" />
+            <xsd:enumeration value="6" />
+            <xsd:enumeration value="7" />
+            <xsd:enumeration value="8" />
+            <xsd:enumeration value="9" />
+            <xsd:enumeration value="N_A" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="RSSType">
+        <xsd:restriction base="s32" />
+    </xsd:simpleType>
+
+    <xsd:attributeGroup name="SchemaDescription">
+        <xsd:attribute name="SchemaVersion" use="required" type="xsd:string" />
+        <xsd:attribute name="SchemaRelease" use="required" type="xsd:string" />
+    </xsd:attributeGroup>
+
+    <xsd:simpleType name="ScotaOriginType">
+        <xsd:restriction base="s8" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="SDRTransactionType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Trade" />
+            <xsd:enumeration value="Exit" />
+            <xsd:enumeration value="Verified" />
+            <xsd:enumeration value="Disputed" />
+            <xsd:enumeration value="Amendment" />
+            <xsd:enumeration value="Increase" />
+            <xsd:enumeration value="Termination" />
+            <xsd:enumeration value="Novation" />
+            <xsd:enumeration value="Novation-Trade" />
+            <xsd:enumeration value="Backload" />
+            <xsd:enumeration value="Historical" />
+            <xsd:enumeration value="Historical-Expired" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ServiceMode">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="YES" />
+            <xsd:enumeration value="NO" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="SettlementDisruptionType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Negociation" />
+            <xsd:enumeration value="Cancellation_And_Payment" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="SettlementType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="C" />
+            <xsd:enumeration value="P" />
+            <xsd:enumeration value="O" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="SO2QualityAdjustmentType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="SpecifiedPriceType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="High" />
+            <xsd:enumeration value="Low" />
+            <xsd:enumeration value="Average" />
+            <xsd:enumeration value="Closing" />
+            <xsd:enumeration value="Opening" />
+            <xsd:enumeration value="Bid" />
+            <xsd:enumeration value="Ask" />
+            <xsd:enumeration value="Ave_Bid_Ask" />
+            <xsd:enumeration value="Settlement" />
+            <xsd:enumeration value="Off_Settlement" />
+            <xsd:enumeration value="Official" />
+            <xsd:enumeration value="Morning" />
+            <xsd:enumeration value="Afternoon" />
+            <xsd:enumeration value="Spot" />
+            <xsd:enumeration value="Other" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="StateType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Acknowledgement" />
+            <xsd:enumeration value="Warning" />
+            <xsd:enumeration value="Error" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="StrategyTypeType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="SuppressPriceDisseminationType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="RT" />
+            <xsd:enumeration value="None" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TradeIDType">
+        <xsd:restriction base="s30" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TradingCapacityType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="A" />
+            <xsd:enumeration value="P" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TimeZoneOffsetType">
+        <xsd:restriction base="xsd:integer">
+            <xsd:maxInclusive value="12" />
+            <xsd:minInclusive value="-12" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TitleConditionsType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TransactionType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="FOR" />
+            <xsd:enumeration value="OPT" />
+            <xsd:enumeration value="PHYS_INX" />
+            <xsd:enumeration value="OPT_PHYS_INX" />
+            <xsd:enumeration value="FXD_SWP" />
+            <xsd:enumeration value="FLT_SWP" />
+            <xsd:enumeration value="VV_FLT_SWP" />
+            <xsd:enumeration value="OPT_FXD_SWP" />
+            <xsd:enumeration value="OPT_FLT_SWP" />
+            <xsd:enumeration value="OPT_FIN_INX" />
+            <xsd:enumeration value="OPT_VV_FLT_SWP" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="UnderlyingCodeTypeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="I" />
+            <xsd:enumeration value="A" />
+            <xsd:enumeration value="U" />
+            <xsd:enumeration value="B" />
+            <xsd:enumeration value="X" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="UnderlyingType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="UnitOfMeasureType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Therm" />
+            <xsd:enumeration value="KWh" />
+            <xsd:enumeration value="MWh" />
+            <xsd:enumeration value="GWh" />
+            <xsd:enumeration value="MJ" />
+            <xsd:enumeration value="100MJ" />
+            <xsd:enumeration value="MMJ" />
+            <xsd:enumeration value="GJ" />
+            <xsd:enumeration value="BBL" />
+            <xsd:enumeration value="MT" />
+            <xsd:enumeration value="GAL" />
+            <xsd:enumeration value="ThermPerDay" />
+            <xsd:enumeration value="KWhPerDay" />
+            <xsd:enumeration value="GWhPerDay" />
+            <xsd:enumeration value="MJPerDay" />
+            <xsd:enumeration value="100MJPerDay" />
+            <xsd:enumeration value="MMJPerDay" />
+            <xsd:enumeration value="MW" />
+            <xsd:enumeration value="KW" />
+            <xsd:enumeration value="GW" />
+            <xsd:enumeration value="GJPerDay" />
+            <xsd:enumeration value="Day" />
+            <xsd:enumeration value="EUA" />
+            <xsd:enumeration value="BTU" />
+            <xsd:enumeration value="CBU" />
+            <xsd:enumeration value="cwt" />
+            <xsd:enumeration value="DTH" />
+            <xsd:enumeration value="hL" />
+            <xsd:enumeration value="Ingot" />
+            <xsd:enumeration value="KG" />
+            <xsd:enumeration value="kL" />
+            <xsd:enumeration value="L" />
+            <xsd:enumeration value="LB" />
+            <xsd:enumeration value="MMBTU" />
+            <xsd:enumeration value="OBU" />
+            <xsd:enumeration value="ozt" />
+            <xsd:enumeration value="SBU" />
+            <xsd:enumeration value="st" />
+            <xsd:enumeration value="t" />
+            <xsd:enumeration value="WBU" />
+            <xsd:enumeration value="ROC" />
+            <xsd:enumeration value="LEC" />
+            <xsd:enumeration value="CER" />
+            <xsd:enumeration value="Celsius" />
+            <xsd:enumeration value="Fahrenheit" />
+            <xsd:enumeration value="Bag" />
+            <xsd:enumeration value="BCF" />
+            <xsd:enumeration value="BF" />
+            <xsd:enumeration value="BSH" />
+            <xsd:enumeration value="g" />
+            <xsd:enumeration value="in" />
+            <xsd:enumeration value="M3" />
+            <xsd:enumeration value="Vega" />
+            <xsd:enumeration value="KM3" />
+            <xsd:enumeration value="EUAA" />
+            <xsd:enumeration value="SM3" />
+            <xsd:enumeration value="AAU" />
+            <xsd:enumeration value="NM3" />
+            <xsd:enumeration value="MCM" />
+            <xsd:enumeration value="MWhPerDay" />
+            <xsd:enumeration value="M3PerDay" />
+            <xsd:enumeration value="MCMPerDay" />
+            <xsd:enumeration value="BTUPerDay" />
+            <xsd:enumeration value="MMBTUPerDay" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="UProductCodeType">
+        <xsd:restriction base="s255" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="UsageType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Test" />
+            <xsd:enumeration value="Live" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="USIType">
+        <xsd:restriction base="s42" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="UTIType">
+        <xsd:restriction base="s52" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ValuationTypeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="M" />
+            <xsd:enumeration value="O" />
+            <xsd:enumeration value="C" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="VenueOfExecutionType">
+        <xsd:restriction base="s4" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="VerificationStatusType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Verified" />
+            <xsd:enumeration value="Disputed" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="VerificationType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Electronic" />
+            <xsd:enumeration value="Non-Electronic" />
+            <xsd:enumeration value="Unverified" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="VersionType">
+        <xsd:restriction base="xsd:integer">
+            <xsd:maxInclusive value="999" />
+            <xsd:minInclusive value="1" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="WeekDayType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="MON" />
+            <xsd:enumeration value="TUE" />
+            <xsd:enumeration value="WED" />
+            <xsd:enumeration value="THU" />
+            <xsd:enumeration value="FRI" />
+            <xsd:enumeration value="SAT" />
+            <xsd:enumeration value="SUN" />
+            <xsd:enumeration value="TBILL" />
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

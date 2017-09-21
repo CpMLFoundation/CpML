@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- V4.0.0-2017-09-19 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xsd:include schemaLocation="CPML-CoreElements.xsd" />
+
+    <xsd:element name="ERRBoxResult">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="DocumentID" type="IdentificationType" />
+                <xsd:element name="DocumentVersion" type="VersionType" minOccurs="0" />
+                <xsd:element name="Timestamp" type="UTCTimestampType" />
+                <xsd:choice>
+                    <xsd:element ref="CMSResult" />
+                    <xsd:element ref="DoddFrankResult" />
+                    <xsd:element ref="ODRFResult" />
+                    <xsd:element ref="EuropeResult" maxOccurs="2" />
+                </xsd:choice>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- V6.4.3-2017-09-19 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xsd:include schemaLocation="CPML-CoreElements.xsd" />
+
+    <xsd:element name="ETDTradeDetails">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="DocumentID" type="IdentificationType" />
+                <xsd:element name="DocumentUsage" type="UsageType" />
+                <xsd:element name="SenderID" type="PartyType" />
+                <xsd:element name="ReceiverID" type="PartyType" />
+                <xsd:element name="ReceiverRole" type="ETDRoleType" />
+                <xsd:element name="DocumentVersion" type="VersionType" />
+                <xsd:element name="CreationTimestamp" type="UTCTimestampType" />
+                <xsd:element name="TransactionType" type="ETDTransactionType" />
+                <xsd:element name="PrimaryAssetClass" type="AssetClassType" />
+                <xsd:element name="ClearingParameters">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="DealID" type="IdentificationType" minOccurs="0" />
+                            <xsd:element name="ClearingRegistrationAgentID" type="PartyType" />
+                            <xsd:element name="ClearingHouseID" type="PartyType" />
+                            <xsd:element name="Lots" type="LotsType" />
+                            <xsd:element name="UnitPrice" type="PriceType" />
+                            <xsd:element name="Anonymous" type="TrueFalseType" minOccurs="0" />
+                            <xsd:element name="Initiator" type="PartyType" minOccurs="0" />
+                            <xsd:element name="Product">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="CRAProductCode" type="s100" />
+                                        <xsd:element name="DeliveryPeriod" minOccurs="0">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="DeliveryStartDate" type="DateType" />
+                                                    <xsd:element name="DeliveryEndDate" type="DateType" />
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="OptionDetails" minOccurs="0">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="Type" type="OptionType" />
+                                                    <xsd:element name="StrikePrice" type="PriceType" />
+                                                    <xsd:element name="OptionStyle" type="EMIROptionStyle" />
+                                                    <xsd:element name="ExerciseSchedule" minOccurs="0">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="ExerciseDateTime" type="UTCTimestampType"
+                                                                    maxOccurs="unbounded" />
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="AdditionalDatas" minOccurs="0">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="AdditionalData" maxOccurs="unbounded">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="Key" type="AdditionalDataKeyType" />
+                                                                <xsd:element name="Value" type="AdditionalDataValueType" />
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="BuyerDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="BuyerParty" type="PartyType" />
+                            <xsd:element name="DealID" type="IdentificationType" minOccurs="0" />
+                            <xsd:element name="ExecutionTimestamp" type="UTCTimestampType" minOccurs="0" />
+                            <xsd:element name="Agents">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="Agent" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="AgentType" type="AgentType" />
+                                                    <xsd:element name="AgentName" type="NameType" minOccurs="0" />
+                                                    <xsd:element name="BrokerID" type="PartyType" />
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="SellerDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="SellerParty" type="PartyType" />
+                            <xsd:element name="DealID" type="IdentificationType" minOccurs="0" />
+                            <xsd:element name="ExecutionTimestamp" type="UTCTimestampType" minOccurs="0" />
+                            <xsd:element name="Agents">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="Agent" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="AgentType" type="AgentType" />
+                                                    <xsd:element name="AgentName" type="NameType" minOccurs="0" />
+                                                    <xsd:element name="BrokerID" type="PartyType" />
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="MTFDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="MTFID" type="PartyType" />
+                            <xsd:element name="ExecutionTimestamp" type="UTCTimestampType" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

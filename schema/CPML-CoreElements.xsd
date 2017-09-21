@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- V6.4.3-2017-09-19 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xsd:include schemaLocation="CPML-CoreTypes.xsd" />
+
+    <xsd:group name="ConfirmationDescription">
+        <xsd:sequence>
+            <xsd:sequence>
+                <xsd:element name="Market" type="CountryCodeType" minOccurs="0" />
+                <xsd:element name="Commodity" type="EnergyProductType" minOccurs="0" />
+                <xsd:element name="TransactionType" type="TransactionType" />
+                <xsd:element name="DeliveryPointArea" type="AreaType" minOccurs="0" />
+                <xsd:element name="BuyerParty" type="PartyType" />
+                <xsd:element name="SellerParty" type="PartyType" />
+                <xsd:element name="LoadType" type="ContractType" minOccurs="0" />
+                <xsd:element name="Agreement" type="AgreementType" />
+                <xsd:element name="Currency" type="CurrencyCodeTypeWithFractionOption" />
+                <xsd:element name="TotalVolume" type="QuantityType" minOccurs="0" />
+                <xsd:choice minOccurs="0">
+                    <xsd:element name="TotalVolumeUnit" type="UnitOfMeasureType" />
+                    <xsd:element name="TotalAmountCurrency" type="CurrencyCodeType" />
+                </xsd:choice>
+                <xsd:choice minOccurs="1">
+                    <xsd:element name="TradeDate" type="DateType" />
+                    <xsd:element name="TradeExecutionTimestamp" type="UTCOffsetTimestampType" />
+                </xsd:choice>
+                <xsd:element name="CapacityUnit" type="UnitOfMeasureType" minOccurs="0" />
+                <xsd:element name="PriceUnit" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Currency" type="CurrencyCodeTypeWithFractionOption" />
+                            <xsd:element name="CapacityUnit" type="UnitOfMeasureType" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="TimeIntervalQuantities" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="TimeIntervalQuantity" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:group ref="DeliveryChoice" />
+                                        <xsd:element name="ContractCapacity" type="QuantityType" />
+                                        <xsd:element name="Price" type="PriceType" minOccurs="0" />
+                                        <xsd:element name="PaymentEvent" type="PaymentEventType" minOccurs="0" />
+                                        <xsd:element name="PaymentEventOffset" type="QuantityType" minOccurs="0" />
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element ref="FixedPriceInformation" minOccurs="0" />
+                <xsd:choice>
+                    <xsd:element name="TotalContractValue" type="PriceType" />
+                    <xsd:element name="FloatPriceInformation" maxOccurs="2">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="FloatPricePayer" type="PartyType" />
+                                <xsd:element name="FormulaID" type="IdentificationType" minOccurs="0" />
+                                <xsd:element name="FormulaSpreadInformation" minOccurs="0">
+                                    <xsd:complexType>
+                                        <xsd:sequence>
+                                            <xsd:element name="SpreadPayer" type="PartyType" />
+                                            <xsd:element name="SpreadAmount" type="PriceType" />
+                                            <xsd:element name="SpreadCurrencyUnit" type="CurrencyCodeType" minOccurs="0" />
+                                            <xsd:element ref="FXInformation" minOccurs="0" />
+                                        </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="CommodityReferences" minOccurs="0">
+                                    <xsd:complexType>
+                                        <xsd:sequence>
+                                            <xsd:element name="CommodityReference" maxOccurs="unbounded">
+                                                <xsd:complexType>
+                                                    <xsd:sequence>
+                                                        <xsd:element name="CommodityReferencePrice" type="ISDACommodityDefinitionsType" />
+                                                        <xsd:element name="IndexCommodity" type="IndexCommodityType" />
+                                                        <xsd:element name="IndexCurrencyUnit" type="CurrencyCodeType" />
+                                                        <xsd:element name="IndexCapacityUnit" type="UnitOfMeasureType" />
+                                                        <xsd:element name="SpecifiedPrice" type="SpecifiedPriceType" />
+                                                        <xsd:element name="Factor" type="QuantityType" />
+                                                        <xsd:element name="DeliveryDate" type="DeliveryDateType" />
+                                                        <xsd:element name="DatedContract" type="DateType" minOccurs="0" />
+                                                        <xsd:element name="Multiplier" type="QuantityType" minOccurs="0" />
+                                                        <xsd:element name="PricingDate" type="PricingDateType" minOccurs="0" />
+                                                        <xsd:element name="IndexCap" type="PriceType" minOccurs="0" />
+                                                        <xsd:element name="IndexFloor" type="PriceType" minOccurs="0" />
+                                                        <xsd:element name="CRCapacityConversionRate" type="QuantityType"
+                                                            minOccurs="0" />
+                                                        <xsd:element name="PhysicalIndexPricingDates" minOccurs="0">
+                                                            <xsd:complexType>
+                                                                <xsd:sequence>
+                                                                    <xsd:element name="PIPricingDate" type="DateType" maxOccurs="unbounded" />
+                                                                </xsd:sequence>
+                                                            </xsd:complexType>
+                                                        </xsd:element>
+                                                        <xsd:element ref="FXInformation" minOccurs="0" />
+                                                        <xsd:element name="SpreadInformation" minOccurs="0">
+                                                            <xsd:complexType>
+                                                                <xsd:sequence>
+                                                                    <xsd:element name="SpreadPayer" type="PartyType" />
+                                                                    <xsd:element name="SpreadAmount" type="PriceType" />
+                                                                    <xsd:element name="SpreadCurrencyUnit" type="CurrencyCodeType"
+                                                                        minOccurs="0" />
+                                                                    <xsd:element ref="FXInformation" minOccurs="0" />
+                                                                </xsd:sequence>
+                                                            </xsd:complexType>
+                                                        </xsd:element>
+                                                        <xsd:element name="CalculationPeriods" minOccurs="0">
+                                                            <xsd:complexType>
+                                                                <xsd:sequence>
+                                                                    <xsd:element name="CalculationPeriod" maxOccurs="unbounded">
+                                                                        <xsd:complexType>
+                                                                            <xsd:sequence>
+                                                                                <xsd:element name="StartDate" type="DateType" />
+                                                                                <xsd:element name="EndDate" type="DateType" />
+                                                                                <xsd:element name="CPNotionalQuantity" type="QuantityType"
+                                                                                    minOccurs="0" />
+                                                                            </xsd:sequence>
+                                                                        </xsd:complexType>
+                                                                    </xsd:element>
+                                                                </xsd:sequence>
+                                                            </xsd:complexType>
+                                                        </xsd:element>
+                                                        <xsd:element name="PricingFXPeriods" minOccurs="0">
+                                                            <xsd:complexType>
+                                                                <xsd:sequence>
+                                                                    <xsd:element name="PricingFXPeriod" maxOccurs="unbounded">
+                                                                        <xsd:complexType>
+                                                                            <xsd:sequence>
+                                                                                <xsd:element name="StartDate" type="DateType" />
+                                                                                <xsd:element name="EndDate" type="DateType" />
+                                                                            </xsd:sequence>
+                                                                        </xsd:complexType>
+                                                                    </xsd:element>
+                                                                </xsd:sequence>
+                                                            </xsd:complexType>
+                                                        </xsd:element>
+                                                    </xsd:sequence>
+                                                </xsd:complexType>
+                                            </xsd:element>
+                                        </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+                <xsd:element ref="Rounding" minOccurs="0" />
+                <xsd:element ref="CommonPricing" minOccurs="0" />
+                <xsd:element ref="OrderNumber" minOccurs="0" />
+                <xsd:element ref="EffectiveDate" minOccurs="0" />
+                <xsd:element ref="TerminationDate" minOccurs="0" />
+                <xsd:element name="EUATradeDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Price" type="PriceType" minOccurs="0" />
+                            <xsd:element name="EmissionsDeliveryDate" type="DateType" />
+                            <xsd:element name="BuyerDeliveryAccount" type="EUAAccountCodeType" minOccurs="0" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="PhysicalCoalTradeDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="RSS" type="RSSType" />
+                            <xsd:element name="Origin" type="ScotaOriginType" />
+                            <xsd:element name="Incoterms" type="IncotermsType" />
+                            <xsd:element name="Tolerance" type="QuantityType" />
+                            <xsd:element name="USCoalProduct" minOccurs="0">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="BTUQualityAdjustments" type="BTUQualityAdjustmentType" />
+                                        <xsd:element name="SO2QualityAdjustments" type="SO2QualityAdjustmentType" />
+                                        <xsd:element name="QVA" type="TrueFalseType" />
+                                        <xsd:element name="TransportationEquipment" type="EquipmentType" />
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+
+                        </xsd:sequence>
+
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="PhysicalOilTradeDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Type" type="ProductType" />
+                            <xsd:element name="Grade" type="ProductGradeType" />
+                            <xsd:element name="Incoterms" type="IncotermsType" />
+                            <xsd:element name="ImporterOfRecord" type="PartyType" minOccurs="0" />
+                            <xsd:choice>
+                                <xsd:element name="AbsoluteTolerance">
+                                    <xsd:complexType>
+                                        <xsd:sequence>
+                                            <xsd:element name="PositiveLimit" type="QuantityType" />
+                                            <xsd:element name="NegativeLimit" type="QuantityType" />
+                                            <xsd:element name="ToleranceUoM" type="UnitOfMeasureType" />
+                                            <xsd:element name="ToleranceOptionOwner" type="PartyType" />
+                                        </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="PercentageTolerance">
+                                    <xsd:complexType>
+                                        <xsd:sequence>
+                                            <xsd:element name="PositiveLimit" type="QuantityType" />
+                                            <xsd:element name="NegativeLimit" type="QuantityType" />
+                                            <xsd:element name="ToleranceOptionOwner" type="PartyType" />
+                                        </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                            </xsd:choice>
+                            <xsd:element name="PipelineDetails" minOccurs="0" maxOccurs="1">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="PipelineName" type="PipelineNameType" />
+                                        <xsd:element name="EntryPoint" type="DeliveryPointAreaType" />
+                                        <xsd:element name="DeliverableByBarge" type="TrueFalseType" />
+                                        <xsd:element name="Incoterms" type="IncotermsType" />
+                                        <xsd:element name="PipelineCycles" minOccurs="0">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="PipelineCycle" maxOccurs="unbounded">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="Cycle" type="CycleType" />
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+
+                <xsd:element name="USElectricityTradeDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Type" type="ProductType" />
+                            <xsd:element name="Voltage" type="QuantityType" />
+                            <xsd:element name="DeliveryType" type="DeliveryTypeType" />
+                            <xsd:choice>
+                                <xsd:element name="ContingencyDetails">
+                                    <xsd:complexType>
+                                        <xsd:sequence>
+                                            <xsd:element name="Contingency" type="DeliveryContingencyType" />
+                                            <xsd:element name="ContingentParty" type="PartyType" />
+                                        </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="ElectingPartyDetails">
+                                    <xsd:complexType>
+                                        <xsd:sequence>
+                                            <xsd:element name="ElectingParty" type="PartyType" />
+                                        </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                            </xsd:choice>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="PhysicalBullionTradeDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Type" type="ProductType" />
+                            <xsd:element name="BullionType" type="BullionType" />
+                            <xsd:element name="SettlementDisruption" type="SettlementDisruptionType" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="PhysicalMetalTradeDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Type" type="ProductType" />
+                            <xsd:element name="MetalMaterial" type="MetalMaterialType" />
+                            <xsd:element name="MetalGrade" type="ProductGradeType" />
+                            <xsd:element name="SettlementDisruption" type="SettlementDisruptionType" />
+                            <xsd:element name="Incoterms" type="IncotermsType" />
+                            <xsd:element name="TitleConditions" type="TitleConditionsType" />
+                            <xsd:element name="Tolerance" type="QuantityType" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="HubCodificationInformation" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="BuyerHubCode" type="IdentificationType" />
+                            <xsd:element name="SellerHubCode" type="IdentificationType" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="AccountAndChargeInformation" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="SellerEnergyAccountIdentification" type="IdentificationType" />
+                            <xsd:element name="BuyerEnergyAccountIdentification" type="IdentificationType" />
+                            <xsd:element name="NotificationAgent" type="PartyType" minOccurs="0" />
+                            <xsd:element name="TransmissionChargeIdentification" type="IdentificationType" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="OptionDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="OptionsType" type="OptionType" />
+                            <xsd:element name="OptionWriter" type="PartyType" />
+                            <xsd:element name="OptionHolder" type="PartyType" />
+                            <xsd:element name="OptionStyle" type="OptionStyleType" />
+                            <xsd:element name="StrikePrice" type="PriceType" minOccurs="1" />
+                            <xsd:element name="IndexStrikePriceStyle" type="IndexStrikePriceStyleType" minOccurs="0" />
+                            <xsd:element name="SecondStrikePrice" type="PriceType" minOccurs="0" />
+                            <xsd:element name="CappedPrice" type="PriceType" minOccurs="0" />
+                            <xsd:element name="FlooredPrice" type="PriceType" minOccurs="0" />
+                            <xsd:element name="OptionCurrency" type="CurrencyCodeType" minOccurs="0" />
+                            <xsd:element name="PremiumRate" type="PriceType" minOccurs="0" />
+                            <xsd:element name="PremiumCurrency" type="CurrencyCodeType" />
+                            <xsd:element name="PremiumUnit" minOccurs="0">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="Currency" type="CurrencyCodeType" />
+                                        <xsd:element name="Capacity" type="UnitOfMeasureType" />
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="TotalPremiumValue" type="PriceType" />
+                            <xsd:element name="PremiumPaymentDate" type="DateType" minOccurs="0" />
+                            <xsd:element name="ExerciseDateTime" type="ClockDateTimeType" minOccurs="0" />
+                            <xsd:element name="AutomaticExercise" type="TrueFalseType" minOccurs="0" />
+                            <xsd:element name="EarlyExercise" type="TrueFalseType" minOccurs="0" />
+                            <xsd:element name="WrittenConfirmationOfExercise" type="TrueFalseType" minOccurs="0" />
+                            <xsd:element name="CashSettlement" type="TrueFalseType" minOccurs="0" />
+                            <xsd:element name="PremiumPayments" minOccurs="0">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="PremiumPayment" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="PremiumPaymentDate" type="DateType" />
+                                                    <xsd:element name="PremiumPaymentValue" type="PriceType" />
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="ExerciseSchedule" minOccurs="0">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="Exercise" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:group ref="DeliveryChoiceExercise" minOccurs="0" />
+                                                    <xsd:element name="ExerciseDateTime" type="ClockDateTimeType" minOccurs="1" />
+                                                    <xsd:element name="ExerciseTimeZone" type="TimeZoneOffsetType" minOccurs="0" />
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="DeliveryPeriods" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="DeliveryPeriod" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="DeliveryPeriodStartDate" type="DateType" />
+                                        <xsd:element name="DeliveryPeriodEndDate" type="DateType" />
+                                        <xsd:element name="DeliveryPeriodNotionalQuantity" type="QuantityType" />
+                                        <xsd:element name="PaymentDate" type="DateType" />
+                                        <xsd:element name="FixedPrice" type="PriceType" minOccurs="0" />
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="Agents" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Agent" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="AgentType" type="AgentType" />
+                                        <xsd:element name="AgentName" type="NameType" minOccurs="0" />
+                                        <xsd:choice>
+                                            <xsd:element name="Broker">
+                                                <xsd:complexType>
+                                                    <xsd:sequence>
+                                                        <xsd:element name="BrokerID" type="PartyType" />
+                                                    </xsd:sequence>
+                                                </xsd:complexType>
+                                            </xsd:element>
+                                            <xsd:element name="ECVNA">
+                                                <xsd:complexType>
+                                                    <xsd:sequence>
+                                                        <xsd:element name="BSCPartyID" type="BSCPartyIDType" />
+                                                        <xsd:element name="BuyerEnergyAccount" type="EnergyAccountType" />
+                                                        <xsd:element name="SellerEnergyAccount" type="EnergyAccountType" />
+                                                        <xsd:element name="SellerID" type="BSCPartyIDType" />
+                                                        <xsd:element name="BuyerID" type="BSCPartyIDType" />
+                                                    </xsd:sequence>
+                                                </xsd:complexType>
+                                            </xsd:element>
+                                        </xsd:choice>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="TradeTime" type="TimeType" minOccurs="0" />
+                <xsd:element name="TraderName" type="NameType" minOccurs="0" />
+            </xsd:sequence>
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:group name="DeliveryChoice">
+        <xsd:choice>
+            <xsd:sequence>
+                <xsd:element name="DeliveryStartDateAndTime" type="ClockDateTimeType" />
+                <xsd:element name="DeliveryEndDateAndTime" type="ClockDateTimeType" />
+            </xsd:sequence>
+            <xsd:sequence>
+                <xsd:element name="DeliveryStartTimestamp" type="UTCOffsetTimestampType" />
+                <xsd:element name="DeliveryEndTimestamp" type="UTCOffsetTimestampType" />
+            </xsd:sequence>
+        </xsd:choice>
+    </xsd:group>
+
+    <xsd:group name="DeliveryChoiceExercise">
+        <xsd:choice>
+            <xsd:sequence>
+                <xsd:element name="DeliveryStartDateTime" type="ClockDateTimeType" />
+                <xsd:element name="DeliveryEndDateTime" type="ClockDateTimeType" />
+            </xsd:sequence>
+            <xsd:sequence>
+                <xsd:element name="DeliveryStartTimestamp" type="UTCOffsetTimestampType" />
+                <xsd:element name="DeliveryEndTimestamp" type="UTCOffsetTimestampType" />
+            </xsd:sequence>
+        </xsd:choice>
+    </xsd:group>
+
+    <xsd:group name="DocumentHeader">
+        <xsd:sequence>
+            <xsd:element name="DocumentID" type="IdentificationType" />
+            <xsd:element name="DocumentUsage" type="UsageType" />
+            <xsd:element name="SenderID" type="PartyType" />
+            <xsd:element name="ReceiverID" type="PartyType" />
+            <xsd:element name="ReceiverRole" type="RoleType" />
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:element name="CMSResult">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Action" type="s35" />
+                <xsd:element name="Result" type="s35" />
+                <xsd:element name="TradeID" type="TradeIDType" minOccurs="0" />
+                <xsd:element name="UTI" type="UTIType" minOccurs="0" />
+                <xsd:element name="Reason" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:group ref="ErrorReason" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="DoddFrank">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ReportMode" type="ReportModeType" />
+                <xsd:element name="CreationTimestamp" type="UTCTimestampType" />
+                <xsd:element name="TradeID" type="TradeIDType" />
+                <xsd:element name="ReportingParty" type="PartyType" minOccurs="0" />
+                <xsd:element name="UniqueSwapIdentifier" type="USIType" minOccurs="0" />
+                <xsd:element name="PriorUniqueSwapIdentifiers" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="PriorUniqueSwapIdentifier" type="USIType" maxOccurs="4" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="DFTradeEvent" type="DFTradeEventType" />
+                <xsd:element name="PrimaryAssetClass" type="AssetClassType" />
+                <xsd:element name="SecondaryAssetClass" type="AssetClassType" />
+                <xsd:element name="SuppressPriceDissemination" type="SuppressPriceDisseminationType" minOccurs="0" />
+                <xsd:element name="AllocationIndicator" type="AllocationIndicatorType" minOccurs="0" />
+                <xsd:element name="ExecutionVenue" type="ExecutionVenueType" />
+                <xsd:element name="ExecutionVenuePrefix" type="s80" minOccurs="0" />
+                <xsd:element name="ExecutionVenuePartyID" type="s200" minOccurs="0" />
+                <xsd:element name="ExecutionTimeStamp" type="UTCTimestampType" />
+                <xsd:element name="ProductIDPrefix" type="ProductIDPrefixType" />
+                <xsd:element name="ProductIDValue" type="s200" />
+                <xsd:element name="ClearingExceptionParty" type="s200" minOccurs="0" />
+                <xsd:element name="HedgingExemption" type="HedgingExemptionType" minOccurs="0" />
+                <xsd:element name="Nonstandard" type="xsd:boolean" />
+                <xsd:element name="EmbeddedOption" type="xsd:boolean" />
+                <xsd:element name="Collateralized" type="CollateralizedType" />
+                <xsd:element name="Verification" type="VerificationType" />
+                <xsd:element name="AsOfDate" type="DateType" minOccurs="0" />
+                <xsd:element name="AsOfTime" type="TimeType" minOccurs="0" />
+                <xsd:element name="LargeTradeSize" type="xsd:boolean" minOccurs="0" />
+                <xsd:element name="TransfereeParty" type="PartyType" minOccurs="0" />
+                <xsd:element name="TransferorParty" type="PartyType" minOccurs="0" />
+                <xsd:element name="RemainingParty" type="PartyType" minOccurs="0" />
+                <xsd:element name="ReportingJurisdiction" type="ReportingJurisdictionType" minOccurs="0" />
+                <xsd:element name="SenderReportingObligation" type="ReportingJurisdictionType" minOccurs="0" />
+                <xsd:element name="SenderVoluntarySubmissionTrade" type="ReportingJurisdictionType" minOccurs="0" />
+                <xsd:element name="IntentToClear" type="xsd:boolean" />
+                <xsd:element name="IntentToMatch" type="xsd:boolean" />
+                <xsd:element name="IntentToReport" type="xsd:boolean" />
+                <xsd:element name="ExerciseOfSwaption" type="xsd:boolean" minOccurs="0" />
+                <xsd:element name="ResultOfCompression" type="xsd:boolean" minOccurs="0" />
+                <xsd:element name="AdditionalRepository" type="AdditionalRepositoryType" minOccurs="0" />
+                <xsd:element name="AdditionalRepositoryTradeID" type="USIType" minOccurs="0" />
+                <xsd:element name="LinkID" type="s255" minOccurs="0" />
+                <xsd:element name="Party2Parties" type="s200" minOccurs="0" />
+                <xsd:element name="PostTradeEventExecutionDateTime" type="UTCTimestampType" minOccurs="0" />
+                <xsd:element name="PostTradeEventChangeNumberOfUnits" type="QuantityType" minOccurs="0" />
+                <xsd:element name="PostTradeEventFee" type="PriceType" minOccurs="0" />
+                <xsd:element name="PostTradeEventFeeCurrency" type="CurrencyCodeType" minOccurs="0" />
+                <xsd:element name="TradeParty1Role" type="s20" minOccurs="0" />
+                <xsd:element name="TradeParty1USPersonIndicator" type="CountryCodeType" minOccurs="0" />
+                <xsd:element name="TradeParty1FinancialEntityStatus" type="s70" minOccurs="0" />
+                <xsd:element name="TradeParty2Role" type="s20" minOccurs="0" />
+                <xsd:element name="TradeParty2USPersonIndicator" type="CountryCodeType" minOccurs="0" />
+                <xsd:element name="TradeParty2FinancialEntityStatus" type="s70" minOccurs="0" />
+                <xsd:element name="RealTimeNotionalAmount" type="PriceType" minOccurs="0" />
+                <xsd:element name="RealTimeNotionalAmountCurrency" type="CurrencyCodeType" minOccurs="0" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="DoddFrankResult">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ErrAction" type="s35" />
+                <xsd:element name="ErrResult" type="s35" />
+                <xsd:element name="TradeID" type="TradeIDType" minOccurs="0" />
+                <xsd:element name="ReportingParty" type="PartyType" minOccurs="0" />
+                <xsd:element name="UniqueSwapIdentifier" type="USIType" minOccurs="0" />
+                <xsd:element name="ReportingDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="ReportSubmitter" type="PartyType" />
+                            <xsd:element name="ReportingTimestamp" type="UTCTimestampType" />
+                            <xsd:element name="SdrAction" type="ActionType" />
+                            <xsd:element name="MessageType" type="MessageType" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:choice>
+                    <xsd:element name="Reason" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:group ref="ErrorReason" />
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="ValuationFeedback" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="ValuationID" type="IdentificationType" />
+                                <xsd:element name="UniqueSwapIdentifier" type="USIType" minOccurs="0" />
+                                <xsd:element name="State" type="s35" />
+                                <xsd:element name="Reason" minOccurs="0" maxOccurs="unbounded">
+                                    <xsd:complexType>
+                                        <xsd:group ref="ErrorReason" />
+                                    </xsd:complexType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Reason">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ReasonCode" type="ReasonCodeType" />
+                <xsd:element name="ErrorSource" type="xsd:string" minOccurs="0" />
+                <xsd:element name="Originator" type="xsd:string" minOccurs="0" />
+                <xsd:element name="ReasonText" type="ReasonTextType" minOccurs="0" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="CommonPricing" type="CommonPricingType" />
+    <xsd:element name="EffectiveDate" type="DateType" />
+    <xsd:element name="FixedPriceInformation">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="FixedPricePayer" type="PartyType" />
+                <xsd:element name="FPCurrencyUnit" type="CurrencyCodeType" minOccurs="0" />
+                <xsd:element name="FPCapacityUnit" type="UnitOfMeasureType" minOccurs="0" />
+                <xsd:element name="FPCapacityConversionRate" type="QuantityType" minOccurs="0" />
+                <xsd:element ref="FXInformation" minOccurs="0" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Confirmation">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ServiceMode" type="ServiceMode" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:group name="ErrorReason">
+        <xsd:sequence>
+            <xsd:element name="ReasonCode" type="s255" />
+            <xsd:element name="ErrorSource" type="s255" minOccurs="0" />
+            <xsd:element name="Originator" type="s255" minOccurs="0" />
+            <xsd:element name="ReasonText" type="s512" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:element name="EURegulatoryDetails">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="UTI" type="UTIType" minOccurs="0" />
+                <xsd:element name="Repository" type="RepositoryType" minOccurs="0" />
+                <xsd:element name="ReportingTimestamp" type="UTCTimestampType" minOccurs="0" />
+                <xsd:element name="TraderUserName" type="NameType" minOccurs="0" />
+                <xsd:element name="CPFinancialNature" type="CPFinancialNatureType" minOccurs="0" />
+                <xsd:element name="CPSectors" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="CPSector" type="CorporateSectorType" maxOccurs="unbounded" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="BeneficiaryID" type="PartyType" minOccurs="0" />
+                <xsd:element name="TradingCapacity" type="TradingCapacityType" minOccurs="0" />
+                <xsd:element name="OtherCPCountry" type="CountryCodeType" minOccurs="0" />
+                <xsd:element name="CommercialOrTreasury" type="TrueFalseType" minOccurs="0" />
+                <xsd:element name="ClearingThreshold" type="TrueFalseType" minOccurs="0" />
+                <xsd:element name="Collateralisation" type="CollateralisationType" minOccurs="0" />
+                <xsd:element name="CollateralisationPortfolio" type="TrueFalseType" minOccurs="0" />
+                <xsd:element name="CollateralisationPortfolioCode" type="PortfolioCodeType" minOccurs="0" />
+                <xsd:element name="ReportingOnBehalfOf" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="ActingOnBehalfOf" type="OnBehalfOfType" />
+                            <xsd:element name="AgentID" type="PartyType" />
+                            <xsd:element name="OtherCounterpartyDetails" minOccurs="0">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="TraderUserName" type="NameType" minOccurs="0" />
+                                        <xsd:element name="Repository" type="RepositoryType" minOccurs="0" />
+                                        <xsd:element name="CPFinancialNature" type="CPFinancialNatureType" minOccurs="0" />
+                                        <xsd:element name="CPSectors" minOccurs="0">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="CPSector" type="CorporateSectorType" maxOccurs="unbounded" />
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="BeneficiaryID" type="PartyType" minOccurs="0" />
+                                        <xsd:element name="TradingCapacity" type="TradingCapacityType" minOccurs="0" />
+                                        <xsd:element name="OtherCPCountry" type="CountryCodeType" minOccurs="0" />
+                                        <xsd:element name="CommercialOrTreasury" type="TrueFalseType" minOccurs="0" />
+                                        <xsd:element name="ClearingThreshold" type="TrueFalseType" minOccurs="0" />
+                                        <xsd:element name="Collateralisation" type="CollateralisationType" minOccurs="0" />
+                                        <xsd:element name="CollateralisationPortfolio" type="TrueFalseType" minOccurs="0" />
+                                        <xsd:element name="CollateralisationPortfolioCode" type="PortfolioCodeType" minOccurs="0" />
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="ProductIdentifier" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:sequence minOccurs="0">
+                                <xsd:element name="ProductIdentificationType" type="IdentificationOfProductTypeType" />
+                                <xsd:element name="ProductIdentification" type="IdentificationOfProductType" />
+                            </xsd:sequence>
+                            <xsd:sequence minOccurs="0">
+                                <xsd:element name="ProductClassificationType" type="ClassificationOfProductTypeType" />
+                                <xsd:element name="ProductClassification" type="ClassificationOfProductType" />
+                            </xsd:sequence>
+                            <xsd:element name="EProduct" minOccurs="0">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="EProductID1" type="EProduct1CodeType" />
+                                        <xsd:element name="EProductID2" type="EProduct2CodeType" />
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="ContractType" type="ContractTypeType" minOccurs="0" />
+                <xsd:element name="LinkedTransactionInformation" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="LinkedTransactionID" type="UTIType" maxOccurs="unbounded" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="TradeID" type="TradeIDType" />
+                <xsd:element name="VenueOfExecution" type="VenueOfExecutionType" />
+                <xsd:element name="Compression" type="TrueFalseType" minOccurs="0" />
+                <xsd:sequence minOccurs="0">
+                    <xsd:element name="UpFrontPayment" type="PriceType" />
+                    <xsd:element name="UpFrontPaymentCurrency" type="CurrencyCodeType" />
+                </xsd:sequence>
+                <xsd:element name="ExecutionTimestamp" type="UTCTimestampType" minOccurs="0" />
+                <xsd:element name="MasterAgreementVersion" type="MasterAgreementVersionType" minOccurs="0" />
+                <xsd:element name="ClearingObligation" type="TrueFalseType" minOccurs="0" />
+                <xsd:element name="Intragroup" type="TrueFalseType" />
+                <xsd:element name="LoadType" type="LoadTypeType" minOccurs="0" />
+                <xsd:element name="InterconnectionPoint" type="AreaType" minOccurs="0" />
+                <xsd:element name="ConfirmationMeans" type="ConfirmationMeansType" />
+                <xsd:element name="ConfirmationTimestamp" type="UTCTimestampType" minOccurs="0" />
+                <xsd:element name="NotionalAmount" type="PriceType" minOccurs="0" />
+                <xsd:element name="EarlyTerminationDate" type="DateType" minOccurs="0" />
+                <xsd:element name="IndexValue" type="QuantityType" minOccurs="0" />
+                <xsd:element name="ComplexTradeID" type="ComplexTradeIDType" minOccurs="0" />
+                <xsd:element name="ReportTrackingNumber" type="ReportTrackingNumberType" minOccurs="0" />
+                <xsd:element name="SettlementDates" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="DateOfSettlement" type="DateType" maxOccurs="unbounded" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="ETDProductInformation" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="UnderlyingCodeType" type="UnderlyingCodeTypeType" minOccurs="0" />
+                            <xsd:element name="Underlying" type="UnderlyingType" minOccurs="0" />
+                            <xsd:element name="NotionalCurrency1" type="CurrencyCodeType" />
+                            <xsd:element name="NotionalCurrency2" type="CurrencyCodeType" minOccurs="0" />
+                            <xsd:element name="DeliverableCurrency" type="CurrencyCodeType" />
+                            <xsd:element name="PriceNotation" type="PriceNotationType" />
+                            <xsd:element name="PriceMultiplier" type="QuantityType" />
+                            <xsd:element name="TotalVolumeQuantityUnit" type="UnitOfMeasureType" minOccurs="0" />
+                            <xsd:element name="DeliveryType" type="SettlementType" />
+                            <xsd:element name="EffectiveDate" type="DateType" />
+                            <xsd:element name="MaturityDate" type="DateType" />
+                            <xsd:element name="CommodityBase" type="CommodityBaseType" minOccurs="0" />
+                            <xsd:element name="CommodityDetail" type="CommodityDetailType" minOccurs="0" />
+                            <xsd:element name="DeliveryPointOrZone" type="AreaType" minOccurs="0" />
+                            <xsd:element name="InterconnectionPoint" type="AreaType" minOccurs="0" />
+                            <xsd:element name="LoadType" type="LoadTypeType" minOccurs="0" />
+                            <xsd:element name="Duration" type="DurationType" minOccurs="0" />
+                            <xsd:element ref="LoadDeliverySchedule" minOccurs="0" maxOccurs="unbounded" />
+                            <xsd:element name="ContractCapacity" type="QuantityType" minOccurs="0" />
+                            <xsd:element name="EnergyQuantityUnit" type="UnitOfMeasureType" minOccurs="0" />
+                            <xsd:element name="DeliveryStartDate" type="DateType" minOccurs="0" />
+                            <xsd:element name="DeliveryEndDate" type="DateType" minOccurs="0" />
+                            <xsd:element name="Currency2" type="CurrencyCodeType" minOccurs="0" />
+                            <xsd:element name="ExchangeRate1" type="PriceType" minOccurs="0" />
+                            <xsd:element name="ExchangeRateBasis" type="QuoteBasisType" minOccurs="0" />
+                            <xsd:element name="FixedRateOfLeg2" type="QuantityType" minOccurs="0" />
+                            <xsd:element name="FixedRateDayCountLeg1" type="DayCountFractionType" minOccurs="0" />
+                            <xsd:element name="FixedRateDayCountLeg2" type="DayCountFractionType" minOccurs="0" />
+                            <xsd:element name="FixedLegPaymentFrequencyLeg1" type="FrequencyPeriodType" minOccurs="0" />
+                            <xsd:element name="FixedLegPaymentFrequencyLeg2" type="FrequencyPeriodType" minOccurs="0" />
+                            <xsd:element name="FloatingRatePaymentFrequencyLeg1" type="FrequencyPeriodType" minOccurs="0" />
+                            <xsd:element name="FloatingRatePaymentFrequencyLeg2" type="FrequencyPeriodType" minOccurs="0" />
+                            <xsd:element name="FloatingRateResetFrequencyLeg1" type="FrequencyPeriodType" minOccurs="0" />
+                            <xsd:element name="FloatingRateResetFrequencyLeg2" type="FrequencyPeriodType" minOccurs="0" />
+                            <xsd:element name="FloatingRateOfLeg1" type="RateIndexType" minOccurs="0" />
+                            <xsd:element name="FloatingRateReferencePeriodLeg1" type="FrequencyPeriodType" minOccurs="0" />
+                            <xsd:element name="FloatingRateOfLeg2" type="RateIndexType" minOccurs="0" />
+                            <xsd:element name="FloatingRateReferencePeriodLeg2" type="FrequencyPeriodType" minOccurs="0" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="FormulaProductInformation" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Underlying" type="UnderlyingType" minOccurs="0" />
+                            <xsd:element name="CommodityBase" type="CommodityBaseType" />
+                            <xsd:element name="CommodityDetail" type="CommodityDetailType" />
+                            <xsd:element name="IndexCurrencyUnit" type="CurrencyCodeType" minOccurs="0" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="FinancialDeliveryInformation" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="DeliveryPointOrZone" type="AreaType" maxOccurs="unbounded" />
+                            <xsd:element name="InterconnectionPoint" type="AreaType" minOccurs="0" />
+                            <xsd:element name="QuantityVolume" type="QuantityType" />
+                            <xsd:element name="QuantityVolumeUnit" type="UnitOfMeasureType" />
+                            <xsd:element name="DeliveryStartDate" type="DateType" />
+                            <xsd:element name="DeliveryEndDate" type="DateType" />
+                            <xsd:element name="Duration" type="DurationType" />
+                            <xsd:element ref="LoadDeliverySchedule" maxOccurs="unbounded" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Europe">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ProcessInformation">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="ReportingRole" type="ReportingRoleType" />
+                            <xsd:element name="EMIRReportMode" type="ReportModeType" />
+                            <xsd:element name="REMITReportMode" type="ReportModeType" />
+                            <xsd:element name="Position" type="TrueFalseType" minOccurs="0" />
+                            <xsd:element name="Backload" type="TrueFalseType" />
+                            <xsd:element name="Execution" type="TrueFalseType" minOccurs="0" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="Action">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="ActionType" type="ActionTypeType" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element ref="EURegulatoryDetails" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="EuropeResult">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Action" type="s35" />
+                <xsd:element name="Result" type="s35" />
+                <xsd:element name="CounterpartyID" type="PartyType" minOccurs="0" />
+                <xsd:element name="Regime" type="EuropeRegimeType" minOccurs="0" />
+                <xsd:element name="Repository" type="RepositoryType" minOccurs="0" />
+                <xsd:element name="ReportingResult" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="TradeID" type="TradeIDType" />
+                            <xsd:element name="UTI" type="UTIType" minOccurs="0" />
+                            <xsd:element name="Reason" minOccurs="0" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:group ref="ErrorReason" />
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="ValuationResult" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Valuation" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="UTI" type="UTIType" />
+                                        <xsd:element name="Result" type="s255" />
+                                        <xsd:element name="Reason" minOccurs="0" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:group ref="ErrorReason" />
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="CollateralResult" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Collateral" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="UTI" type="UTIType" minOccurs="0" />
+                                        <xsd:element name="PortfolioCode" type="PortfolioCodeType" minOccurs="0" />
+                                        <xsd:element name="Result" type="s255" />
+                                        <xsd:element name="Reason" minOccurs="0" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:group ref="ErrorReason" />
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="FXInformation">
+        <xsd:complexType>
+            <xsd:choice>
+                <xsd:sequence>
+                    <xsd:element name="FXReference" type="FXReferenceType" />
+                    <xsd:element name="FXMethod" type="FXConversionMethodType" />
+                </xsd:sequence>
+                <xsd:element name="FXRate" type="QuantityType" />
+            </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="LoadDeliverySchedule">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="LoadDeliveryInterval" type="LoadDeliveryIntervalType" maxOccurs="unbounded" />
+                <xsd:element name="DaysOfTheWeek">
+                    <xsd:simpleType>
+                        <xsd:list itemType="DayOfWeekType" />
+                    </xsd:simpleType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="ODRF">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ReportMode" type="ReportModeType" />
+                <xsd:element name="CreationTimestamp" type="UTCTimestampType" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="ODRFResult">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Action" type="s35" />
+                <xsd:element name="Result" type="s35" />
+                <xsd:element name="ErrAction" type="s35" />
+                <xsd:element name="ErrResult" type="s35" />
+                <xsd:element name="TradeID" type="TradeIDType" />
+                <xsd:element name="ReportingParty" type="PartyType" minOccurs="0" />
+                <xsd:element name="UniqueSwapIdentifier" type="USIType" minOccurs="0" />
+                <xsd:element name="ReportingDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="ReportSubmitter" type="PartyType" />
+                            <xsd:element name="ReportingTimestamp" type="UTCTimestampType" />
+                            <xsd:element name="SdrAction" type="ActionType" />
+                            <xsd:element name="MessageType" type="MessageType" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:choice>
+                    <xsd:element name="Reason" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:group ref="ErrorReason" />
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="ValuationFeedback" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="ValuationID" type="IdentificationType" />
+                                <xsd:element name="UniqueSwapIdentifier" type="USIType" minOccurs="0" />
+                                <xsd:element name="State" type="s35" />
+                                <xsd:element name="Reason" minOccurs="0" maxOccurs="unbounded">
+                                    <xsd:complexType>
+                                        <xsd:group ref="ErrorReason" />
+                                    </xsd:complexType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="OrderNumber" type="IdentificationType" />
+    <xsd:element name="Rounding" type="RoundingType" />
+    <xsd:element name="TerminationDate" type="DateType" />
+</xsd:schema>
