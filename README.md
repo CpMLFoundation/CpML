@@ -18,6 +18,4 @@ This repository contains the current release version as well as in-progress revi
 
 The current released version of CpML - v6.4.3 is [here](./v6.4.3)
 
-The current draft specification of CpML - v5.3.1-draft is [here](./v5.3.1-draft)
-
 See http://www.cpml.org for futher details on governance and contributer membership.
