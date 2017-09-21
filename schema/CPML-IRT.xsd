@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- V6.4.3-2017-09-19 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xsd:include schemaLocation="CPML-CoreElements.xsd" />
+
+    <xsd:element name="IRSTradeDetails">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:group ref="DocumentHeader" />
+                <xsd:element name="DocumentVersion" type="VersionType" />
+                <xsd:element name="TradeID" type="TradeIDType" minOccurs="0" />
+                <xsd:element name="TransactionType" type="IRSTransactionType" />
+                <xsd:element name="IRSProduct" type="IRSProductType" />
+                <xsd:element name="BuyerParty" type="PartyType" />
+                <xsd:element name="SellerParty" type="PartyType" />
+                <xsd:element name="Agreement" type="AgreementType" />
+                <xsd:element name="Currency" type="CurrencyCodeType" />
+                <xsd:choice>
+                    <xsd:sequence>
+                        <xsd:element name="TradeDate" type="DateType" />
+                        <xsd:element name="TradeTime" type="TimeType" minOccurs="0" />
+                    </xsd:sequence>
+                    <xsd:element name="TradeExecutionTimestamp" type="UTCOffsetTimestampType" />
+                </xsd:choice>
+                <xsd:element name="TraderName" type="NameType" minOccurs="0" />
+                <xsd:element name="Rounding" type="RoundingType" minOccurs="0" />
+                <xsd:element name="CommonPricing" type="CommonPricingType" minOccurs="0" />
+                <xsd:element name="BusinessDayConvention" type="BusinessDayConventionType" />
+                <xsd:element name="Agents" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Agent" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="AgentType" type="AgentType" />
+                                        <xsd:element name="AgentName" type="NameType" minOccurs="0" />
+                                        <xsd:element name="BrokerID" type="PartyType" />
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="OptionDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="OptionsType" type="OptionType" />
+                            <xsd:element name="OptionWriter" type="PartyType" />
+                            <xsd:element name="OptionHolder" type="PartyType" />
+                            <xsd:element name="OptionStyle" type="OptionStyleType" />
+                            <xsd:element name="StrikePrice" type="PriceType" />
+                            <xsd:element name="OptionCurrency" type="CurrencyCodeType" />
+                            <xsd:element name="PremiumRate" type="PriceType" />
+                            <xsd:element name="PremiumCurrency" type="CurrencyCodeType" />
+                            <xsd:element name="TotalPremiumValue" type="PriceType" />
+                            <xsd:element name="PremiumPayments" minOccurs="0">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="PremiumPayment" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="PremiumPaymentDate" type="DateType" />
+                                                    <xsd:element name="PremiumPaymentValue" type="PriceType" />
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="ExerciseSchedules" minOccurs="0">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="ExerciseSchedule" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="ExerciseDateTime" type="UTCTimestampType" />
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="SwapStreams">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="SwapStream" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="PayerParty" type="PartyType" />
+                                        <xsd:element name="ReceiverParty" type="PartyType" />
+                                        <xsd:element name="CalculationPeriodDates">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="EffectiveDate">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="EffectiveDate" type="DateType" />
+                                                                <xsd:element name="DateAdjustments" minOccurs="0">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="BusinessDayConvention" type="BusinessDayConventionType" />
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                    <xsd:element name="TerminationDate">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element ref="TerminationDate" />
+                                                                <xsd:element name="DateAdjustments" minOccurs="0">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="BusinessDayConvention" type="BusinessDayConventionType" />
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                    <xsd:element name="CalculationPeriodFrequency" minOccurs="0">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="PeriodMultiplier" type="PeriodMultiplierType" />
+                                                                <xsd:element name="Period" type="PeriodType" />
+                                                                <xsd:element name="RollConvention" type="RollConventionType" />
+                                                                <xsd:element name="DateAdjustments" minOccurs="0">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="BusinessDayConvention" type="BusinessDayConventionType" />
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="PaymentDates">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="PaymentFrequency">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="PeriodMultiplier" type="PeriodMultiplierType" />
+                                                                <xsd:element name="Period" type="PeriodType" />
+                                                                <xsd:element name="DateAdjustments" minOccurs="0">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="BusinessDayConvention" type="BusinessDayConventionType" />
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                    <xsd:element name="PaymentRelativeTo" minOccurs="0">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="PayRelativeTo" type="PayRelativeToType" />
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="ResetDates" minOccurs="0">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="ResetRelativeTo" type="ResetRelativeToType" />
+                                                    <xsd:element name="ResetFrequency">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="PeriodMultiplier" type="PeriodMultiplierType" />
+                                                                <xsd:element name="Period" type="PeriodType" />
+                                                                <xsd:element name="WeeklyRollConvention" type="WeekDayType"
+                                                                    minOccurs="0" />
+                                                                <xsd:element name="DateAdjustments" minOccurs="0">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="BusinessDayConvention" type="BusinessDayConventionType" />
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                    <xsd:element name="FixingDates" minOccurs="0">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="PeriodMultiplier" type="PeriodMultiplierType" />
+                                                                <xsd:element name="Period" type="PeriodType" />
+                                                                <xsd:element name="DateAdjustments" minOccurs="0">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="BusinessDayConvention" type="BusinessDayConventionType" />
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="CalculationPeriodAmount">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="Calculation">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="NotionalSchedule">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="NotionalStepSchedule">
+                                                                                <xsd:complexType>
+                                                                                    <xsd:sequence>
+                                                                                        <xsd:element name="InitialValue" type="QuantityType" />
+                                                                                        <xsd:element name="Currency" type="CurrencyCodeType" />
+                                                                                    </xsd:sequence>
+                                                                                </xsd:complexType>
+                                                                            </xsd:element>
+                                                                            <xsd:element name="Steps" minOccurs="0">
+                                                                                <xsd:complexType>
+                                                                                    <xsd:sequence>
+                                                                                        <xsd:element name="Step" maxOccurs="unbounded">
+                                                                                            <xsd:complexType>
+                                                                                                <xsd:sequence>
+                                                                                                    <xsd:element name="StepDate"
+                                                                                                        type="DateType" />
+                                                                                                    <xsd:element name="StepValue"
+                                                                                                        type="QuantityType" />
+                                                                                                </xsd:sequence>
+                                                                                            </xsd:complexType>
+                                                                                        </xsd:element>
+                                                                                    </xsd:sequence>
+                                                                                </xsd:complexType>
+                                                                            </xsd:element>
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                                <xsd:choice>
+                                                                    <xsd:element name="FixedRateSchedule">
+                                                                        <xsd:complexType>
+                                                                            <xsd:sequence>
+                                                                                <xsd:element name="InitialValue" type="QuantityType" />
+                                                                                <xsd:element name="Steps" minOccurs="0">
+                                                                                    <xsd:complexType>
+                                                                                        <xsd:sequence>
+                                                                                            <xsd:element name="Step" maxOccurs="unbounded">
+                                                                                                <xsd:complexType>
+                                                                                                    <xsd:sequence>
+                                                                                                        <xsd:element name="StepDate"
+                                                                                                            type="DateType" />
+                                                                                                        <xsd:element name="StepValue"
+                                                                                                            type="QuantityType" />
+                                                                                                    </xsd:sequence>
+                                                                                                </xsd:complexType>
+                                                                                            </xsd:element>
+                                                                                        </xsd:sequence>
+                                                                                    </xsd:complexType>
+                                                                                </xsd:element>
+                                                                            </xsd:sequence>
+                                                                        </xsd:complexType>
+                                                                    </xsd:element>
+                                                                    <xsd:element name="FloatingRateCalculation">
+                                                                        <xsd:complexType>
+                                                                            <xsd:sequence>
+                                                                                <xsd:element name="FloatingRateIndex" type="RateIndexType" />
+                                                                                <xsd:element name="IndexTenor">
+                                                                                    <xsd:complexType>
+                                                                                        <xsd:sequence>
+                                                                                            <xsd:element name="PeriodMultiplier"
+                                                                                                type="PeriodMultiplierType" />
+                                                                                            <xsd:element name="Period" type="PeriodType" />
+                                                                                        </xsd:sequence>
+                                                                                    </xsd:complexType>
+                                                                                </xsd:element>
+                                                                            </xsd:sequence>
+                                                                        </xsd:complexType>
+                                                                    </xsd:element>
+                                                                </xsd:choice>
+                                                                <xsd:element name="DayCountFraction" type="DayCountFractionType" />
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- V4.0.0-2017-09-19 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xsd:include schemaLocation="CPML-CoreTypes.xsd" />
+
+    <xsd:element name="RegulatoryCollateral">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="DocumentID" type="IdentificationType" />
+                <xsd:element name="DocumentUsage" type="UsageType" />
+                <xsd:element name="SenderID" type="PartyType" />
+                <xsd:element name="Repository" type="RepositoryType" minOccurs="0" />
+                <xsd:element name="ReportingTimestamp" type="UTCTimestampType" minOccurs="0" />
+                <xsd:element name="CounterpartyID" type="PartyType" />
+                <xsd:element name="Collateralisation" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="OtherCounterpartyID" type="PartyType" />
+                            <xsd:element name="Level" type="LevelType" />
+                            <xsd:element name="UTI" type="UTIType" minOccurs="0" />
+                            <xsd:element name="Collateralisation" type="CollateralisationType" />
+                            <xsd:element name="CollateralisationPortfolio" type="TrueFalseType" minOccurs="0" />
+                            <xsd:element name="CollateralisationPortfolioCode" type="PortfolioCodeType" minOccurs="0" />
+                            <xsd:sequence minOccurs="0">
+                                <xsd:element name="CollateralInitialMarginPosted" type="PriceType" />
+                                <xsd:element name="CollateralCurrencyInitialMarginPosted" type="CurrencyCodeType" />
+                            </xsd:sequence>
+                            <xsd:sequence minOccurs="0">
+                                <xsd:element name="CollateralVariationMarginPosted" type="PriceType" />
+                                <xsd:element name="CollateralCurrencyVariationMarginPosted" type="CurrencyCodeType" />
+                            </xsd:sequence>
+                            <xsd:sequence minOccurs="0">
+                                <xsd:element name="CollateralInitialMarginReceived" type="PriceType" />
+                                <xsd:element name="CollateralCurrencyInitialMarginReceived" type="CurrencyCodeType" />
+                            </xsd:sequence>
+                            <xsd:sequence minOccurs="0">
+                                <xsd:element name="CollateralVariationMarginReceived" type="PriceType" />
+                                <xsd:element name="CollateralCurrencyVariationMarginReceived" type="CurrencyCodeType" />
+                            </xsd:sequence>
+                            <xsd:sequence minOccurs="0">
+                                <xsd:element name="CollateralExcessPosted" type="PriceType" />
+                                <xsd:element name="CollateralCurrencyExcessPosted" type="CurrencyCodeType" />
+                            </xsd:sequence>
+                            <xsd:sequence minOccurs="0">
+                                <xsd:element name="CollateralExcessReceived" type="PriceType" />
+                                <xsd:element name="CollateralCurrencyExcessReceived" type="CurrencyCodeType" />
+                            </xsd:sequence>
+                            <xsd:element name="CollateralDate" type="DateType" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

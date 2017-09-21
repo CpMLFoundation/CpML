@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- V4.0.0-2017-09-19 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xsd:include schemaLocation="CPML-CoreTypes.xsd" />
+
+    <xsd:element name="RegulatoryValuation">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="DocumentID" type="IdentificationType" />
+                <xsd:element name="DocumentUsage" type="UsageType" />
+                <xsd:element name="SenderID" type="PartyType" />
+                <xsd:element name="Repository" type="RepositoryType" minOccurs="0" />
+                <xsd:element name="ReportingTimestamp" type="UTCTimestampType" minOccurs="0" />
+                <xsd:element name="CounterpartyID" type="PartyType" />
+                <xsd:element name="Valuation" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="OtherCounterpartyID" type="PartyType" />
+                            <xsd:element name="Level" type="LevelType" />
+                            <xsd:choice>
+                                <xsd:element name="UTI" type="UTIType" />
+                                <xsd:element name="USI" type="USIType" />
+                            </xsd:choice>
+                            <xsd:element name="ValuationTimestamp" type="UTCTimestampType" />
+                            <xsd:element name="MtMValue" type="PriceType" />
+                            <xsd:element name="MtMCurrency" type="CurrencyCodeType" />
+                            <xsd:element name="ValuationType" type="ValuationTypeType" minOccurs="0" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- V6.4.3-2017-09-19 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xsd:include schemaLocation="CPML-CoreElements.xsd" />
+
+    <xsd:element name="GenericConfirmation">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:group ref="DocumentHeader" />
+                <xsd:element name="DocumentVersion" type="VersionType" />
+                <xsd:element name="TransactionType" type="TransactionType" />
+                <xsd:element name="Commodity" type="IndexCommodityType" minOccurs="0" />
+                <xsd:element name="ProductName" type="ProductNameType" />
+                <xsd:element name="BuyerParty" type="PartyType" />
+                <xsd:element name="SellerParty" type="PartyType" />
+                <xsd:element name="Currency" type="CurrencyCodeTypeWithFractionOption" />
+                <xsd:element name="TradeDate" type="DateType" />
+                <xsd:element name="TradeTime" type="TimeType" minOccurs="0" />
+                <xsd:element name="TraderName" type="NameType" minOccurs="0" />
+                <xsd:element ref="EffectiveDate" minOccurs="0" />
+                <xsd:element ref="TerminationDate" minOccurs="0" />
+                <xsd:element name="TotalVolume" type="QuantityType" minOccurs="0" />
+                <xsd:choice minOccurs="0">
+                    <xsd:element name="TotalVolumeUnit" type="UnitOfMeasureType" />
+                    <xsd:element name="TotalAmountCurrency" type="CurrencyCodeType" />
+                </xsd:choice>
+                <xsd:element name="OptionDetails" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="StrikePrice" type="PriceType" />
+                            <xsd:element name="StrikePriceCurrency" type="CurrencyCodeType" />
+                            <xsd:element name="StrikePricePerUnitOfMeasure" type="s30" minOccurs="0" />
+                            <xsd:element name="PremiumCurrency" type="CurrencyCodeType" />
+                            <xsd:element name="TotalPremiumValue" type="PriceType" />
+                            <xsd:element name="ExerciseDateTime" type="ClockDateTimeType" />
+                            <xsd:element name="ExerciseTimeZone" type="TimeZoneOffsetType" minOccurs="0" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="Attachment" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="MimeType" type="AttachmentMimeType" />
+                            <xsd:element name="Filename" type="FilenameType" />
+                            <xsd:element name="DocumentDescription" type="DocumentDescriptionType" />
+                            <xsd:element name="AttachmentData" type="xsd:base64Binary" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:attributeGroup ref="SchemaDescription" />
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

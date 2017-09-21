@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- V6.4.3-2017-09-19 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xsd:include schemaLocation="CPML-CoreElements.xsd" />
+
+    <xsd:element name="TradeConfirmation">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:group ref="DocumentHeader" />
+                <xsd:element name="DocumentVersion" type="VersionType" />
+                <xsd:group ref="ConfirmationDescription" />
+            </xsd:sequence>
+            <xsd:attributeGroup ref="SchemaDescription" />
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
