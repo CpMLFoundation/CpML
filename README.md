@@ -16,6 +16,6 @@ on Energy Trading, CpML is commercially-neutral and does not favor any particula
 
 This repository contains the current release version as well as in-progress revisions open for comment and at-risk consumption.
 
-The current released version of CpML - v6.4.3 is [here](./v6.4.3)
+The current released version of CpML - v6.4.3 is [here](https://github.com/CpMLFoundation/CpML/releases/tag/V6.4.3)
 
 See http://www.cpml.org for futher details on governance and contributer membership.
